@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+# Facility Solution Group - Site Web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Site web professionnel pour Facility Solution Group Maroc, spécialisé dans les services industriels et de bâtiment.
 
-## Available Scripts
+## 🚀 Démarrage Rapide avec Vite
 
-In the project directory, you can run:
+### Installation
 
-### `npm start`
+```bash
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Lancement en développement
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm run dev
+```
 
-### `npm test`
+Le site sera accessible sur [http://localhost:3000](http://localhost:3000)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Build pour production
 
-### `npm run build`
+```bash
+npm run build
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prévisualiser le build
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm run preview
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚡ Pourquoi Vite ?
 
-### `npm run eject`
+- **Démarrage ultra-rapide** : Le serveur de développement démarre instantanément
+- **HMR rapide** : Hot Module Replacement ultra-réactif
+- **Build optimisé** : Utilise Rollup pour des builds de production optimaux
+- **Support moderne** : ESM natif, pas de bundling en dev
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📄 Pages du site
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Accueil** (`/`) - Page d'accueil avec slider et présentation des services
+- **Services** (`/services`) - Détails de tous les services (CVC, Électricité, Gaz, Froid)
+- **À propos** (`/a-propos`) - Présentation de l'entreprise et valeurs
+- **Réalisations** (`/realisations`) - Portfolio des projets réalisés
+- **Contact** (`/contact`) - Formulaire de contact et informations
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠️ Technologies utilisées
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **React 19.2.4** - Framework UI
+- **Vite 7.3.1** - Build tool ultra-rapide
+- **React Router DOM 7.x** - Navigation
+- **Framer Motion** - Animations fluides
+- **Swiper** - Slider moderne
+- **React Icons** - Icônes
+- **CSS3** - Design responsive
 
-## Learn More
+## 🎨 Fonctionnalités UI
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- ✨ Animations Framer Motion sur toutes les sections
+- 🎭 Slider Swiper avec effet fade
+- 📱 Design 100% responsive
+- 🎯 Navigation avec effet hover sophistiqué
+- 🌊 Scroll animations
+- 🔝 Bouton scroll to top animé
+- 💫 Effets glassmorphism
+- 🎨 Gradients modernes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📱 Responsive
 
-### Code Splitting
+Le site est entièrement responsive et s'adapte à tous les écrans :
+- Desktop (1200px+)
+- Tablette (768px - 1199px)
+- Mobile (< 768px)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🎨 Couleurs principales
 
-### Analyzing the Bundle Size
+- Rouge principal: #e74c3c
+- Gris foncé: #2c3e50
+- Gris clair: #f8f9fa
+- Blanc: #ffffff
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📞 Contact
 
-### Making a Progressive Web App
+- **Téléphone**: +212 664 518 537
+- **Email**: contact@facilitysolutiongroup.ma
+- **Adresse**: Bd Mohamed V, Technoparc T215, 90100 Tanger, Maroc
+- **Assistance 24/7**: +212 664 518 537
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📦 Structure du projet
 
-### Advanced Configuration
+```
+facilitysolutiongroup/
+├── public/              # Assets statiques
+├── src/
+│   ├── components/      # Composants réutilisables
+│   │   ├── Header.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Services.jsx
+│   │   ├── About.jsx
+│   │   ├── Features.jsx
+│   │   ├── Clients.jsx
+│   │   ├── Contact.jsx
+│   │   └── Footer.jsx
+│   ├── pages/          # Pages de l'application
+│   │   ├── Home.jsx
+│   │   ├── ServicesPage.jsx
+│   │   ├── AboutPage.jsx
+│   │   ├── RealisationsPage.jsx
+│   │   └── ContactPage.jsx
+│   ├── App.jsx         # Composant principal
+│   ├── App.css         # Styles globaux
+│   ├── index.jsx       # Point d'entrée
+│   └── index.css       # Styles de base
+├── index.html          # Template HTML
+├── vite.config.js      # Configuration Vite
+└── package.json        # Dépendances
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🚀 Performance
 
-### Deployment
+Grâce à Vite, le projet bénéficie de :
+- Temps de démarrage < 1 seconde
+- HMR instantané
+- Build optimisé avec code splitting
+- Lazy loading des routes
+- Images optimisées
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📝 Notes de développement
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Les fichiers utilisent l'extension `.jsx` pour une meilleure compatibilité avec Vite
+- Les imports incluent l'extension `.jsx` explicitement
+- Le mode strict de React est activé
+- Les animations sont optimisées pour les performances

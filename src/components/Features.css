@@ -1,0 +1,138 @@
+.features {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.features-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(231, 76, 60, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(231, 76, 60, 0.1) 0%, transparent 50%);
+  opacity: 0.5;
+}
+
+.features .section-title {
+  max-width: 900px;
+  margin: 0 auto 70px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.features .section-title .highlight {
+  color: #e74c3c;
+  display: block;
+  margin-top: 10px;
+  font-size: 2rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 50px 35px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-card:hover {
+  background: rgba(231, 76, 60, 0.1);
+  border-color: #e74c3c;
+}
+
+.feature-icon-wrapper {
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.feature-icon {
+  font-size: 3.5rem;
+  color: #e74c3c;
+  display: inline-block;
+  padding: 25px;
+  background: rgba(231, 76, 60, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.feature-card:hover .feature-icon {
+  background: rgba(231, 76, 60, 0.2);
+  box-shadow: 0 0 30px rgba(231, 76, 60, 0.3);
+}
+
+.feature-card h3 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.feature-card p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.feature-number {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(231, 76, 60, 0.1);
+  line-height: 1;
+  transition: all 0.3s;
+}
+
+.feature-card:hover .feature-number {
+  color: rgba(231, 76, 60, 0.2);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .features .section-title .highlight {
+    font-size: 1.5rem;
+  }
+}
