@@ -13,7 +13,7 @@ function ServicesPage() {
         'Optimisation énergétique',
         'Contrôle et régulation'
       ],
-      image: 'https://facilitysolutiongroup.ma/wp-content/uploads/2024/01/service-cvc.jpg'
+      image: '/public/energetique_froid_AdobeStock_2956959112.jpg'
     },
     {
       title: 'Électricité Industrielle',
@@ -37,7 +37,7 @@ function ServicesPage() {
         'Détection de fuites',
         'Mise en service'
       ],
-      image: 'https://facilitysolutiongroup.ma/wp-content/uploads/2024/01/service-gaz.jpg'
+      image: '/public/kv-sirius-180308.jpg'
     },
     {
       title: 'Froid Industriel',
@@ -49,7 +49,7 @@ function ServicesPage() {
         'Dépannage rapide',
         'Optimisation des performances'
       ],
-      image: 'https://facilitysolutiongroup.ma/wp-content/uploads/2024/01/service-froid.jpg'
+      image: '/public/energetique_froid_AdobeStock_2956959112.jpg'
     }
   ];
 

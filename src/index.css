@@ -1,6 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bahij TheSansArabic Font Family */
+@font-face {
+  font-family: 'Bahij TheSansArabic';
+  src: url('/public/fonts/Bahij_TheSansArabic-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bahij TheSansArabic';
+  src: url('/public/fonts/Bahij_TheSansArabic-SemiLight.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bahij TheSansArabic';
+  src: url('/public/fonts/Bahij_TheSansArabic-Plain.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bahij TheSansArabic';
+  src: url('/public/fonts/Bahij_TheSansArabic-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bahij TheSansArabic';
+  src: url('/public/fonts/Bahij_TheSansArabic-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bahij TheSansArabic';
+  src: url('/public/fonts/Bahij_TheSansArabic-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --header-height: 70px;
+  --header-height-mobile: 70px;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Bahij TheSansArabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -14,4 +72,39 @@ code {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e74c3c;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c0392b;
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #e74c3c #f1f1f1;
+}
+
+@layer utilities {
+  .pt-header {
+    padding-top: var(--header-height);
+  }
+  
+  .pt-header-mobile {
+    padding-top: var(--header-height-mobile);
+  }
 }
