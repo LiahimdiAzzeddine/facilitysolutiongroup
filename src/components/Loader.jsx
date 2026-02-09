@@ -17,7 +17,7 @@ function Loader() {
           className="mb-8"
         >
           <img 
-            src="/public/logowebdark.png" 
+            src="/logowebdark.png" 
             alt="Facility Solution Group" 
             className="h-20 w-auto mx-auto"
             style={{ filter: 'brightness(0) invert(1)' }}

@@ -6,19 +6,19 @@ function About() {
     {
       title: 'CVC',
       description: 'Climatisation, Ventilation, Chauffage',
-      image: '/public/energetique_froid_AdobeStock_2956959112.jpg',
+      image: '/energetique_froid_AdobeStock_2956959112.jpg',
       link: '/contact'
     },
     {
       title: 'Electricité Industrielle',
       description: 'Solutions électriques complètes',
-      image: '/public/kv-sirius-180308.jpg',
+      image: '/kv-sirius-180308.jpg',
       link: '/contact'
     },
     {
       title: 'Froid Industriel',
       description: 'Systèmes de réfrigération',
-      image: '/public/coldroom-FSG.jpg',
+      image: '/coldroom-FSG.jpg',
       link: '/contact'
     }
   ];

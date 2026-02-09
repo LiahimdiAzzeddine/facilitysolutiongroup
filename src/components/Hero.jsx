@@ -19,7 +19,7 @@ function Hero() {
       subtitle: 'Votre fidélité est la preuve de notre expertise',
       buttonText: 'Découvrir',
       buttonLink: '#services',
-      image: '/public/ElectInstal01.jpg'
+      image: '/ElectInstal01.jpg'
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ function Hero() {
       subtitle: 'Solutions complètes pour vos systèmes de climatisation',
       buttonText: 'DEVIS GRATUIT',
       buttonLink: '/contact',
-      image: '/public/HVAC1.jpg'
+      image: '/HVAC1.jpg'
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ function Hero() {
       subtitle: 'Expertise et fiabilité pour vos installations',
       buttonText: 'Découvrir',
       buttonLink: '/services',
-      image: '/public/MultiTechniFSG-2.jpg'
+      image: '/MultiTechniFSG-2.jpg'
     }
   ];
 

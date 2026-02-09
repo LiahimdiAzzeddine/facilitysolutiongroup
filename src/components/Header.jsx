@@ -99,7 +99,7 @@ function Header() {
             >
               <Link to="/" onClick={closeMenu} className="flex items-center">
                 <img 
-                  src="/public/logowebdark.png" 
+                  src="/logowebdark.png" 
                   alt="Facility Solution Group Logo" 
                   className={`w-auto object-contain transition-all duration-300 ${
                     scrolled ? 'h-10' : 'h-12'

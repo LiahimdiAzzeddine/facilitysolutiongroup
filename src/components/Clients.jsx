@@ -2,11 +2,11 @@ import { motion } from 'framer-motion';
 
 function Clients() {
   const clients = [
-    { name: 'Arenor', logo: '/public/clients/arenorlog-1.png' },
-    { name: 'CIR', logo: '/public/clients/Cir.png' },
-    { name: 'City Mall', logo: '/public/clients/citymalllog.png' },
-    { name: 'McDonald\'s', logo: '/public/clients/mcdolog.png' },
-    { name: 'Paper', logo: '/public/clients/paper.png' }
+    { name: 'Arenor', logo: '/clients/arenorlog-1.png' },
+    { name: 'CIR', logo: '/clients/Cir.png' },
+    { name: 'City Mall', logo: '/clients/citymalllog.png' },
+    { name: 'McDonald\'s', logo: '/clients/mcdolog.png' },
+    { name: 'Paper', logo: '/clients/paper.png' }
     
   ];
 
