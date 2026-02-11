@@ -1,4 +1,15 @@
+/* Hero Section - Full Screen without Header Overlap */
+section.relative.mt-0.pt-0 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
 /* Swiper Custom Styles */
+.hero-slider {
+  margin-top: 0 !important;
+  height: 100vh !important;
+}
+
 .hero-slider .swiper-wrapper {
   height: 100%;
 }
@@ -69,6 +80,10 @@
 }
 
 @media (max-width: 768px) {
+  .hero-slider {
+    height: 100vh !important;
+  }
+  
   .hero-slider .swiper-button-next,
   .hero-slider .swiper-button-prev {
     display: none;

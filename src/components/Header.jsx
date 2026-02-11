@@ -85,7 +85,7 @@ function Header() {
         className={`fixed left-0 right-0 z-[999] transition-all duration-300 ${
           scrolled 
             ? 'top-0 py-3 bg-white shadow-lg' 
-            : 'top-0 md:top-[49px] py-4 bg-transparent'
+            : 'top-0 md:top-[53px] py-4 bg-transparent'
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}

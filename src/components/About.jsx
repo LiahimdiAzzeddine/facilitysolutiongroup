@@ -37,7 +37,7 @@ function About() {
             FACILITY SOLUTION GROUP
           </h2>
           <p className="text-base md:text-xl text-gray-600 leading-relaxed px-4">
-            Nous Opérons dans le Secteur Industrielle et Bâtiment, Offrant des Services de Rénovation, d'Agencement et d'Entretien.
+            Nous opérons dans les secteurs industriel et du bâtiment, offrant des services de rénovation, d'agencement et d'entretien.
           </p>
         </motion.div>
         
@@ -107,7 +107,7 @@ function About() {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          FSG Vous assure un service personnalisé et clé en main pour tous vos travaux
+          FSG vous assure un service personnalisé et clé en main pour tous vos travaux
         </motion.p>
       </div>
     </section>

@@ -1,115 +1,125 @@
 .contact-page {
-  margin-top: 90px;
+  /* Pas de margin-top car le hero section gère l'espace */
 }
 
-.contact-content {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 60px;
-}
-
-.contact-form-section h2,
-.contact-info-section h2 {
-  color: #2c3e50;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  font-weight: 700;
-}
-
-.contact-form {
-  background: #f8f9fa;
-  padding: 40px;
-  border-radius: 5px;
-}
-
-.form-group {
-  margin-bottom: 25px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  color: #2c3e50;
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.form-group input,
-.form-group textarea {
+/* Contact Hero Section */
+.contact-hero {
+  position: relative;
   width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.3s;
+  min-height: 50vh;
+  height: 50vh;
+  overflow: hidden;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #e74c3c;
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.form-group textarea {
-  resize: vertical;
+.hero-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 48, 73, 0.92) 0%, rgba(214, 40, 40, 0.88) 100%);
+  z-index: 1;
 }
 
-.contact-info-card {
-  background: #f8f9fa;
-  padding: 25px;
-  border-radius: 5px;
-  margin-bottom: 20px;
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(250, 197, 20, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  z-index: 2;
 }
 
-.contact-info-card h3 {
-  color: #2c3e50;
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-
-.contact-info-card p {
-  color: #666;
-  line-height: 1.8;
-  margin: 0;
-}
-
-.contact-info-card a {
-  color: #e74c3c;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.contact-info-card a:hover {
-  color: #c0392b;
-}
-
-.contact-info-card.emergency {
-  background: #e74c3c;
+.hero-content {
+  position: relative;
+  z-index: 3;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
   color: white;
+  padding: 2rem 2rem 3rem 2rem;
 }
 
-.contact-info-card.emergency h3 {
-  color: white;
+.hero-content h1 {
+  text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.contact-info-card.emergency p {
-  color: white;
+.hero-content p {
+  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-.emergency-phone {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-top: 10px;
+/* Contact Cards Premium Style */
+.contact-card-premium {
+  position: relative;
+  background: white;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+  border: 2px solid var(--gray-100);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card-premium:hover {
+  box-shadow: var(--shadow-2xl);
+  border-color: var(--primary);
+}
+
+.contact-icon-header {
+  position: relative;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.contact-icon-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+}
+
+.contact-icon-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
 }
 
 @media (max-width: 768px) {
-  .contact-content {
-    grid-template-columns: 1fr;
+  .hero-content h1 {
+    font-size: 2rem;
   }
-
-  .contact-form {
-    padding: 25px;
+  
+  .hero-content p {
+    font-size: 1rem;
   }
 }

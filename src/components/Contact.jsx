@@ -43,10 +43,10 @@ function Contact() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-secondary uppercase tracking-wide mb-4">
-            Pour de plus amples informations sur nos prestations
+            Pour plus d'informations sur nos prestations
           </h2>
           <p className="text-xl md:text-2xl text-primary font-bold">
-            N'hésitez pas à nous contacter!
+            N'hésitez pas à nous contacter !
           </p>
         </motion.div>
         

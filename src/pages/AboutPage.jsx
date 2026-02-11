@@ -1,5 +1,10 @@
 import { motion } from 'framer-motion';
-import { FaTools, FaSnowflake, FaBolt, FaFire } from 'react-icons/fa';
+import { 
+  FaTools, FaSnowflake, FaBolt, FaFire, FaWrench, 
+  FaIndustry, FaBuilding, FaHospital, FaHotel, 
+  FaUtensils, FaShoppingCart, FaHardHat, FaCogs,
+  FaWind, FaDraftingCompass, FaCheckCircle, FaArrowRight
+} from 'react-icons/fa';
 import './AboutPage.css';
 
 function AboutPage() {
@@ -38,10 +43,19 @@ function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="text-6xl mb-6">🏢</div>
-              <p className="text-xl mb-4 uppercase tracking-wider">FACILITY SOLUTION GROUP</p>
-              <h1 className="text-5xl font-black uppercase mb-6">
-                <span className="text-primary">L'agilité et la solidité</span> d'une entreprise à taille humaine pour répondre aux <span className="text-primary">enjeux énergétiques de vos bâtiments.</span>
+              <motion.span 
+                className="inline-block bg-white/15 backdrop-blur-md px-6 py-2.5 rounded-lg text-sm font-bold uppercase tracking-widest mb-4 border-2 border-white/30 shadow-lg"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                Facility Solution Group
+              </motion.span>
+              <div className="text-5xl mb-4">
+                <FaBuilding className="inline-block text-white drop-shadow-2xl" />
+              </div>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase mb-4 leading-tight max-w-5xl mx-auto">
+                <span className="text-primary">L'agilité et la solidité</span> d'une entreprise à taille humaine pour répondre aux <span className="text-primary">enjeux énergétiques de vos bâtiments</span>
               </h1>
             </motion.div>
           </div>
@@ -59,12 +73,12 @@ function AboutPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-black text-secondary uppercase text-center mb-8">
-              A PROPOS <span className="text-primary">FACILITY SOLUTION GROUP</span>
+              À PROPOS <span className="text-primary">FACILITY SOLUTION GROUP</span>
             </h2>
             
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <p>
-                <strong className="text-primary">FSG</strong> intervient sur tout le Maroc pour réaliser, exploiter et maintenir les installations de nos clients des secteurs <strong>industriel et tertiaire, hôpitaux, hôtels, restaurants, la grande distribution...</strong>
+                <strong className="text-primary">FSG</strong> intervient sur tout le Maroc pour réaliser, exploiter et maintenir les installations de nos clients des secteurs <strong>industriel et tertiaire : hôpitaux, hôtels, restaurants, grande distribution...</strong>
               </p>
               
               <p>
@@ -72,7 +86,7 @@ function AboutPage() {
               </p>
               
               <p>
-                Du <strong>génie climatique</strong> au <strong>froid industriel</strong>, en passant par <strong>l'électricité</strong> ou encore la <strong>ventilation</strong>, nous déployons nos expertises via notre bureau d'études, nos concepteurs et nos monteurs.
+                Du <strong>génie climatique</strong> au <strong>froid industriel</strong>, en passant par <strong>l'électricité</strong> et la <strong>ventilation</strong>, nous déployons nos expertises via notre bureau d'études, nos concepteurs et nos monteurs.
               </p>
               
               <p>
@@ -144,28 +158,44 @@ function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: '🏭', title: 'Industriel', desc: 'Installations industrielles complètes' },
-              { icon: '🏢', title: 'Tertiaire', desc: 'Bureaux et espaces professionnels' },
-              { icon: '🏥', title: 'Hôpitaux', desc: 'Équipements médicaux spécialisés' },
-              { icon: '🏨', title: 'Hôtels', desc: 'Confort et efficacité énergétique' },
-              { icon: '🍽️', title: 'Restaurants', desc: 'Systèmes de ventilation et froid' },
-              { icon: '🛒', title: 'Grande Distribution', desc: 'Froid commercial et climatisation' },
-              { icon: '🏗️', title: 'Bâtiments', desc: 'Tous types de constructions' },
-              { icon: '⚡', title: 'Multi-technique', desc: 'Solutions complètes intégrées' }
+              { icon: <FaIndustry />, title: 'Industriel', desc: 'Installations industrielles complètes', color: 'from-blue-500 to-cyan-500' },
+              { icon: <FaBuilding />, title: 'Tertiaire', desc: 'Bureaux et espaces professionnels', color: 'from-purple-500 to-indigo-500' },
+              { icon: <FaHospital />, title: 'Hôpitaux', desc: 'Équipements médicaux spécialisés', color: 'from-green-500 to-emerald-500' },
+              { icon: <FaHotel />, title: 'Hôtels', desc: 'Confort et efficacité énergétique', color: 'from-yellow-500 to-orange-500' },
+              { icon: <FaUtensils />, title: 'Restaurants', desc: 'Systèmes de ventilation et froid', color: 'from-red-500 to-pink-500' },
+              { icon: <FaShoppingCart />, title: 'Grande Distribution', desc: 'Froid commercial et climatisation', color: 'from-indigo-500 to-purple-500' },
+              { icon: <FaHardHat />, title: 'Bâtiments', desc: 'Tous types de constructions', color: 'from-gray-500 to-gray-700' },
+              { icon: <FaCogs />, title: 'Multi-technique', desc: 'Solutions complètes intégrées', color: 'from-teal-500 to-cyan-500' }
             ].map((sector, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center group hover:-translate-y-2"
+                className="bg-white rounded-2xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-500"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -10 }}
               >
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {sector.icon}
+                {/* Icon Header */}
+                <div className={`relative h-32 bg-gradient-to-br ${sector.color} flex items-center justify-center overflow-hidden`}>
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                  <div className="absolute bottom-0 left-0 w-20 h-20 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+                  <motion.div 
+                    className="relative z-10 text-white text-5xl drop-shadow-2xl"
+                    whileHover={{ rotate: 360, scale: 1.2 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    {sector.icon}
+                  </motion.div>
                 </div>
-                <h3 className="text-xl font-bold text-secondary mb-2">{sector.title}</h3>
-                <p className="text-gray-600 text-sm">{sector.desc}</p>
+                
+                {/* Content */}
+                <div className="p-5 text-center">
+                  <h3 className="text-lg font-black text-secondary mb-2 uppercase tracking-wide group-hover:text-primary transition-colors duration-300">
+                    {sector.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{sector.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -187,28 +217,45 @@ function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
-              { icon: '❄️', title: 'Génie Climatique', desc: 'Climatisation, ventilation, chauffage' },
-              { icon: '🧊', title: 'Froid Industriel', desc: 'Chambres froides et systèmes de réfrigération' },
-              { icon: '⚡', title: 'Électricité', desc: 'Installations électriques complètes' },
-              { icon: '💨', title: 'Ventilation', desc: 'Systèmes de ventilation et extraction' },
-              { icon: '🔧', title: 'Maintenance Multitechnique', desc: 'Entretien préventif et curatif' },
-              { icon: '📐', title: 'Bureau d\'Études', desc: 'Conception et dimensionnement' }
+              { icon: <FaSnowflake />, title: 'Génie Climatique', desc: 'Climatisation, ventilation et chauffage', color: 'from-blue-500 to-cyan-500' },
+              { icon: <FaWrench />, title: 'Froid Industriel', desc: 'Chambres froides et systèmes de réfrigération', color: 'from-purple-500 to-indigo-500' },
+              { icon: <FaBolt />, title: 'Électricité', desc: 'Installations électriques complètes', color: 'from-yellow-500 to-orange-500' },
+              { icon: <FaWind />, title: 'Ventilation', desc: 'Systèmes de ventilation et d\'extraction', color: 'from-teal-500 to-cyan-500' },
+              { icon: <FaTools />, title: 'Maintenance Multitechnique', desc: 'Entretien préventif et curatif', color: 'from-red-500 to-pink-500' },
+              { icon: <FaDraftingCompass />, title: 'Bureau d\'Études', desc: 'Conception et dimensionnement', color: 'from-indigo-500 to-purple-500' }
             ].map((expertise, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border-2 border-gray-100 hover:border-primary transition-all duration-300 group"
+                className="relative bg-white rounded-2xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-500"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -10 }}
               >
-                <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {expertise.icon}
+                {/* Icon Header */}
+                <div className={`relative h-40 bg-gradient-to-br ${expertise.color} flex items-center justify-center overflow-hidden`}>
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                  <div className="absolute bottom-0 left-0 w-20 h-20 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+                  <motion.div 
+                    className="relative z-10 text-white text-6xl drop-shadow-2xl"
+                    whileHover={{ rotate: 360, scale: 1.2 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    {expertise.icon}
+                  </motion.div>
                 </div>
-                <h3 className="text-2xl font-black text-secondary mb-3 uppercase">
-                  {expertise.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{expertise.desc}</p>
+                
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-black text-secondary mb-3 uppercase tracking-wide group-hover:text-primary transition-colors duration-300">
+                    {expertise.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">{expertise.desc}</p>
+                </div>
+
+                {/* Hover Border Effect */}
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary rounded-2xl transition-all duration-300 pointer-events-none"></div>
               </motion.div>
             ))}
           </div>
@@ -242,17 +289,17 @@ function AboutPage() {
               <h2 className="text-4xl font-black text-secondary uppercase mb-4">
                 <span className="text-primary">FSG</span> assure la maintenance de vos systèmes <span className="text-primary">CVC</span>
               </h2>
-              <p className="text-xl text-gray-600 mb-4">Climatisation - Ventilation - Chauffage</p>
+              <p className="text-xl text-gray-600 mb-4">Climatisation, Ventilation et Chauffage</p>
               
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  <strong>FSG</strong> apporte des solutions de maintenance sur vos systèmes de génie climatique. Nos techniciens interviennent sur l'ensemble des techniques de Climatisation, Ventilation, Chauffage (CVC) en adéquation avec le matériel déjà en place ou installé par nos soins.
+                  <strong>FSG</strong> apporte des solutions de maintenance pour vos systèmes de génie climatique. Nos techniciens interviennent sur l'ensemble des techniques de Climatisation, Ventilation et Chauffage (CVC) en adéquation avec le matériel déjà en place ou installé par nos soins.
                 </p>
                 <p>
-                  De la pompe à chaleur air-air ou air-eau, en passant par les VMC simples et doubles flux, les hottes, aérothermes, radiants, chauffe-eau, adoucisseurs d'eau,… nos équipes ont la compétence pour intervenir sur tout type de matériel.
+                  De la pompe à chaleur air-air ou air-eau, en passant par les VMC simples et doubles flux, les hottes, aérothermes, radiants, chauffe-eau, adoucisseurs d'eau... nos équipes ont la compétence pour intervenir sur tout type de matériel.
                 </p>
                 <p>
-                  Proximité, réactivité, adaptabilité, pérennité et confiance sont les qualités que notre entreprise met à votre service.
+                  Proximité, réactivité, adaptabilité, pérennité et confiance sont les valeurs que notre entreprise met à votre service.
                 </p>
               </div>
 
@@ -291,14 +338,17 @@ function AboutPage() {
                 Installation Électrique Industrielle
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                FSG vous propose ses services pour l'installation complète de votre système électrique. En neuf comme en rénovation, nous vous garantissons une intervention rapide et soignée.
+                FSG vous propose ses services pour l'installation complète de votre système électrique. En construction neuve comme en rénovation, nous vous garantissons une intervention rapide et soignée.
               </p>
-              <a
+              <motion.a
                 href="/services"
-                className="inline-block bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Lire la suite
-              </a>
+                <FaArrowRight />
+              </motion.a>
             </motion.div>
             <motion.div
               className="order-1 lg:order-2"
@@ -329,7 +379,7 @@ function AboutPage() {
           >
             <p className="text-xl mb-4 uppercase tracking-wider">FACILITY SOLUTION GROUP</p>
             <h2 className="text-4xl font-black uppercase">
-              <span className="text-primary">L'électricité et la CVC</span> sont nos métiers.
+              <span className="text-primary">L'électricité et le CVC</span> sont nos métiers
             </h2>
           </motion.div>
 
@@ -402,14 +452,17 @@ function AboutPage() {
                 Au Service d'une Énergie Propre et Durable
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Fort de 10 ans d'expérience, FSG s'engage à vous proposer des solutions adaptées pour la réalisation d'économies et de vous accompagner sur le chemin de la transition énergétique.
+                Fort de 10 ans d'expérience, FSG s'engage à vous proposer des solutions adaptées pour réaliser des économies d'énergie et vous accompagner dans votre transition énergétique.
               </p>
-              <a
+              <motion.a
                 href="/services"
-                className="inline-block bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Lire la suite
-              </a>
+                <FaArrowRight />
+              </motion.a>
             </motion.div>
           </div>
         </div>

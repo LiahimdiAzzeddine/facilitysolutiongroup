@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import CompanyOverview from '../components/CompanyOverview';
 import Services from '../components/Services';
 import About from '../components/About';
 import Features from '../components/Features';
@@ -9,6 +10,7 @@ function Home() {
   return (
     <>
       <Hero />
+      <CompanyOverview />
       <Services />
       <About />
       <Features />

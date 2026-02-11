@@ -25,7 +25,7 @@ function Hero() {
       id: 2,
       title: 'Installation & Maintenance CVC',
       subtitle: 'Solutions complètes pour vos systèmes de climatisation',
-      buttonText: 'DEVIS GRATUIT',
+      buttonText: 'Devis Gratuit',
       buttonLink: '/contact',
       image: '/HVAC1.jpg'
     },
@@ -59,7 +59,7 @@ function Hero() {
   ];
 
   return (
-    <section className="relative mt-0">
+    <section className="relative mt-0 pt-0">
       <div className="relative w-full">
         <Swiper
           modules={[Autoplay, EffectFade, Pagination, Navigation]}
@@ -99,7 +99,7 @@ function Hero() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                      Facility Solution Group
+                     Performance. Fiabilité. Durabilité.
                     </motion.span>
                     
                     <motion.h1
@@ -129,7 +129,7 @@ function Hero() {
                     >
                       <a 
                         href={slide.buttonLink} 
-                        className="inline-flex items-center gap-2 md:gap-3 bg-white text-primary px-6 md:px-10 py-3 md:py-4 rounded-lg font-bold text-sm md:text-base uppercase tracking-wide shadow-2xl border-2 border-white hover:bg-primary hover:text-white hover:-translate-y-1 hover:shadow-primary/40 transition-all duration-300"
+                        className="inline-flex items-center gap-2 md:gap-3 bg-white text-primary px-6 md:px-10 py-2 md:py-3 rounded-lg font-bold text-sm md:text-base uppercase tracking-wide shadow-2xl border-2 border-white hover:bg-primary hover:text-white hover:-translate-y-1 hover:shadow-primary/40 transition-all duration-300"
                       >
                         {slide.buttonText}
                         <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-2 text-sm md:text-base" />

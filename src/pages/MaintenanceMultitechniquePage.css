@@ -2,8 +2,8 @@
 .maintenance-hero {
   position: relative;
   width: 100%;
-  height: 60vh;
-  min-height: 500px;
+  height: 50vh;
+  min-height: 400px;
   overflow: hidden;
 }
 
@@ -18,57 +18,120 @@
   background-repeat: no-repeat;
 }
 
+.hero-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 48, 73, 0.92) 0%, rgba(214, 40, 40, 0.88) 100%);
+  z-index: 1;
+}
+
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(0, 48, 73, 0.9) 0%, rgba(214, 40, 40, 0.8) 100%);
-  z-index: 1;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(250, 197, 20, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  z-index: 2;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
-  height: 60vh;
-  min-height: 500px;
+  z-index: 3;
+  height: 50vh;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   text-align: center;
   color: white;
-  padding: 2rem;
+  padding: 2rem 2rem 3rem 2rem;
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
   line-height: 1.2;
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1.125rem, 2vw, 1.75rem);
   font-weight: 400;
   opacity: 0.95;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.3);
   max-width: 800px;
+  line-height: 1.5;
 }
 
-/* Modern Service Cards */
+/* Modern Service Cards - Style À Propos */
+.service-card-premium {
+  position: relative;
+  background: white;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+  border: 2px solid var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  group: true;
+}
+
+.service-card-premium:hover {
+  box-shadow: var(--shadow-2xl);
+  border-color: var(--primary);
+}
+
+.service-icon-header-maintenance {
+  position: relative;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.service-icon-header-maintenance::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+}
+
+.service-icon-header-maintenance::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+}
+
+/* Old styles kept for compatibility */
 .service-card-modern {
   background: white;
-  border-radius: 1rem;
+  border-radius: var(--radius-2xl);
   padding: 3rem 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
   text-align: center;
-  border: 2px solid transparent;
+  border: 2px solid var(--gray-100);
   position: relative;
   overflow: hidden;
 }
@@ -79,10 +142,10 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #d62828, #003049);
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-base);
 }
 
 .service-card-modern:hover::before {
@@ -90,74 +153,79 @@
 }
 
 .service-card-modern:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  transform: translateY(-5px);
-  border-color: #d62828;
+  box-shadow: var(--shadow-2xl);
+  transform: translateY(-8px);
+  border-color: var(--primary);
 }
 
 .service-icon-modern {
-  font-size: 4rem;
-  color: #d62828;
+  font-size: 4.5rem;
+  color: var(--primary);
   margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
-  transition: transform 0.3s ease;
+  transition: all var(--transition-base);
 }
 
 .service-card-modern:hover .service-icon-modern {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 8px 16px rgba(214, 40, 40, 0.3));
 }
 
 .service-title-modern {
-  font-size: 1.75rem;
+  font-size: 1.875rem;
   font-weight: 900;
-  color: #003049;
+  color: var(--secondary);
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
 }
 
 .service-subtitle-modern {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #d62828;
-  margin-bottom: 1rem;
+  color: var(--primary);
+  margin-bottom: 1.25rem;
 }
 
 .service-description-modern {
   font-size: 1rem;
-  color: #666;
-  line-height: 1.6;
+  color: var(--gray-600);
+  line-height: 1.7;
 }
 
 /* Sector Progress Bars */
 .sector-item {
-  padding: 1.5rem;
+  padding: 2rem;
   background: white;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  border: 1px solid var(--gray-200);
 }
 
 .sector-item:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  transform: translateX(10px);
+  box-shadow: var(--shadow-xl);
+  transform: translateX(12px);
+  border-color: var(--primary);
 }
 
 .progress-bar-container {
   width: 100%;
-  height: 12px;
-  background: #e9ecef;
-  border-radius: 10px;
+  height: 14px;
+  background: var(--gray-200);
+  border-radius: var(--radius-full);
   overflow: hidden;
   position: relative;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .progress-bar-fill {
   height: 100%;
-  border-radius: 10px;
-  transition: width 1s ease-out;
+  border-radius: var(--radius-full);
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .progress-bar-fill::after {
@@ -167,8 +235,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: shimmer 2s infinite;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2.5s infinite;
 }
 
 @keyframes shimmer {
@@ -182,8 +250,19 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .maintenance-hero {
+    height: 45vh;
+    min-height: 350px;
+  }
+
+  .hero-content {
+    height: 45vh;
+    min-height: 350px;
+    padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+  }
+
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .hero-subtitle {
@@ -191,11 +270,11 @@
   }
 
   .service-card-modern {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
   }
 
   .service-icon-modern {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   .service-title-modern {
@@ -204,5 +283,9 @@
 
   .service-subtitle-modern {
     font-size: 1rem;
+  }
+  
+  .sector-item {
+    padding: 1.5rem;
   }
 }

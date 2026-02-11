@@ -1,6 +1,9 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaDownload, FaChevronLeft, FaChevronRight, FaExpand } from 'react-icons/fa';
+import { 
+  FaDownload, FaChevronLeft, FaChevronRight, FaExpand, FaBook,
+  FaBuilding, FaTools, FaCheckCircle, FaUsers
+} from 'react-icons/fa';
 import HTMLFlipBook from 'react-pageflip';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
@@ -71,11 +74,21 @@ function EPlaquettePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <p className="text-xl mb-4 uppercase tracking-wider">FACILITY SOLUTION GROUP</p>
-              <h1 className="text-5xl font-black uppercase mb-6">
+              <motion.span 
+                className="inline-block bg-white/15 backdrop-blur-md px-6 py-2.5 rounded-lg text-sm font-bold uppercase tracking-widest mb-4 border-2 border-white/30 shadow-lg"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                Facility Solution Group
+              </motion.span>
+              <div className="text-5xl mb-4">
+                <FaBook className="inline-block text-white drop-shadow-2xl" />
+              </div>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase mb-4 leading-tight max-w-5xl mx-auto">
                 <span className="text-primary">E-Plaquette</span>
               </h1>
-              <p className="text-xl">Feuilletez notre catalogue comme un vrai livre</p>
+              <p className="text-lg md:text-xl opacity-95 mb-6">Feuilletez notre catalogue comme un vrai livre</p>
             </motion.div>
           </div>
         </div>
@@ -106,7 +119,7 @@ function EPlaquettePage() {
                   className="inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                   <FaDownload />
-                  Télécharger PDF
+                  Télécharger le PDF
                 </a>
                 <a
                   href="/e-plaquette.pdf"
@@ -115,7 +128,7 @@ function EPlaquettePage() {
                   className="inline-flex items-center gap-3 bg-secondary hover:bg-secondary-dark text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                   <FaExpand />
-                  Ouvrir PDF
+                  Ouvrir le PDF
                 </a>
               </div>
             </div>
@@ -128,13 +141,13 @@ function EPlaquettePage() {
                 loading={
                   <div className="loading-container">
                     <div className="loader"></div>
-                    <p className="text-white mt-4">Chargement du livre...</p>
+                    <p className="text-white mt-4">Chargement du catalogue...</p>
                   </div>
                 }
                 error={
                   <div className="error-container">
                     <p className="text-white text-center">
-                      Erreur de chargement du PDF. Veuillez réessayer.
+                      Erreur de chargement du PDF. Veuillez réessayer ou télécharger le fichier.
                     </p>
                   </div>
                 }
@@ -226,44 +239,69 @@ function EPlaquettePage() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl font-black text-secondary uppercase mb-6">
-                Que Contient Notre E-Plaquette ?
+                Que contient notre E-Plaquette ?
               </h2>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
-                  icon: '🏢',
+                  icon: <FaBuilding />,
                   title: 'Présentation de FSG',
-                  desc: 'Découvrez notre entreprise, nos valeurs et notre expertise'
+                  desc: 'Découvrez notre entreprise, nos valeurs et notre expertise',
+                  color: 'from-blue-500 to-cyan-500'
                 },
                 {
-                  icon: '⚙️',
+                  icon: <FaTools />,
                   title: 'Nos Services',
-                  desc: 'CVC, Électricité, Froid Industriel, Maintenance Multitechnique'
+                  desc: 'CVC, Électricité, Froid Industriel et Maintenance Multitechnique',
+                  color: 'from-purple-500 to-indigo-500'
                 },
                 {
-                  icon: '📊',
+                  icon: <FaCheckCircle />,
                   title: 'Nos Réalisations',
-                  desc: 'Projets réussis et références clients'
+                  desc: 'Projets réussis et références clients',
+                  color: 'from-green-500 to-emerald-500'
                 },
                 {
-                  icon: '🤝',
+                  icon: <FaUsers />,
                   title: 'Nos Clients',
-                  desc: 'Ils nous font confiance au quotidien'
+                  desc: 'Ils nous font confiance au quotidien',
+                  color: 'from-red-500 to-pink-500'
                 }
               ].map((item, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                  className="info-card-premium"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
                 >
-                  <div className="text-5xl mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-bold text-secondary mb-3">{item.title}</h3>
-                  <p className="text-gray-600">{item.desc}</p>
+                  {/* Icon Header */}
+                  <div className={`info-icon-header bg-gradient-to-br ${item.color}`}>
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                    <div className="absolute bottom-0 left-0 w-20 h-20 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+                    <motion.div 
+                      className="relative z-10 text-white text-5xl drop-shadow-2xl"
+                      whileHover={{ rotate: 360, scale: 1.2 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      {item.icon}
+                    </motion.div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-black text-secondary mb-3 uppercase tracking-wide">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                  </div>
+
+                  {/* Hover Border Effect */}
+                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary rounded-2xl transition-all duration-300 pointer-events-none"></div>
                 </motion.div>
               ))}
             </div>

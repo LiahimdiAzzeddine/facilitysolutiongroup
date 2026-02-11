@@ -5,13 +5,13 @@ function Features() {
   const features = [
     {
       title: 'INSTALLATION & MAINTENANCE',
-      description: 'Toute les installations sont assurées par nos équipes techniques spécialisées.',
+      description: 'Toutes les installations sont assurées par nos équipes techniques spécialisées et certifiées.',
       icon: <FaTools />,
       color: 'from-blue-500 to-cyan-500'
     },
     {
       title: 'INTERVENTION D\'URGENCE',
-      description: 'Nos équipes s\'adaptent à vos contraintes et interviennent ou installent directement sur site.',
+      description: 'Nos équipes s\'adaptent à vos contraintes et interviennent rapidement sur site, 24h/24 et 7j/7.',
       icon: <FaExclamationTriangle />,
       color: 'from-red-500 to-orange-500'
     },
@@ -22,8 +22,8 @@ function Features() {
       color: 'from-green-500 to-emerald-500'
     },
     {
-      title: 'IMPLICATION',
-      description: 'Personnels qualifiés, procédures métiers, respect de votre cahier des charges, conformité des normes en vigueur font partie de nos exigences.',
+      title: 'ENGAGEMENT QUALITÉ',
+      description: 'Personnel qualifié, procédures rigoureuses, respect de votre cahier des charges et conformité aux normes en vigueur.',
       icon: <FaCheckCircle />,
       color: 'from-purple-500 to-pink-500'
     }
@@ -85,7 +85,7 @@ function Features() {
               
               {/* Content */}
               <div className="flex flex-col flex-grow">
-                <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-wide mb-3 md:mb-4 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-md md:text-lg font-black text-white uppercase tracking-wide mb-3 md:mb-4 group-hover:text-primary transition-colors duration-300">
                   {feature.title}
                 </h3>
                 <p className="text-sm md:text-base text-gray-300 leading-relaxed flex-grow">

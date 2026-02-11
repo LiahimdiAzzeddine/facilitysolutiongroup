@@ -1,5 +1,10 @@
 import { motion } from 'framer-motion';
-import { FaSnowflake, FaBolt, FaFire, FaWrench, FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { 
+  FaSnowflake, FaBolt, FaFire, FaWrench, FaPhone, FaEnvelope, 
+  FaMapMarkerAlt, FaClock, FaTools, FaBuilding, FaIndustry,
+  FaShoppingCart, FaHardHat, FaCheckCircle, FaArrowRight,
+  FaCogs, FaShieldAlt, FaUsers
+} from 'react-icons/fa';
 import './MaintenanceMultitechniquePage.css';
 
 function MaintenanceMultitechniquePage() {
@@ -8,25 +13,29 @@ function MaintenanceMultitechniquePage() {
       title: 'CVC',
       subtitle: 'Climatisation, Ventilation & Chauffage',
       icon: <FaSnowflake />,
-      description: 'Solutions complètes pour vos systèmes de climatisation, ventilation et chauffage'
+      description: 'Solutions complètes pour vos systèmes de climatisation, ventilation et chauffage',
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       title: 'Génie Électrique',
       subtitle: 'Installations Électriques',
       icon: <FaBolt />,
-      description: 'Expertise en installations électriques industrielles et tertiaires'
+      description: 'Expertise en installations électriques industrielles et tertiaires',
+      color: 'from-yellow-500 to-orange-500'
     },
     {
       title: 'Froid Industriel',
       subtitle: 'Froid Industriel & Commercial',
-      icon: <FaSnowflake />,
-      description: 'Systèmes de réfrigération pour l\'industrie et le commerce'
+      icon: <FaWrench />,
+      description: 'Systèmes de réfrigération pour l\'industrie et le commerce',
+      color: 'from-purple-500 to-indigo-500'
     },
     {
       title: 'Gaz & Fluides',
       subtitle: 'Gaz & Fluides Spéciaux',
       icon: <FaFire />,
-      description: 'Installation et maintenance de systèmes de gaz et fluides spéciaux'
+      description: 'Installation et maintenance de systèmes de gaz et fluides spéciaux',
+      color: 'from-red-500 to-pink-500'
     }
   ];
 
@@ -59,8 +68,19 @@ function MaintenanceMultitechniquePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="hero-title">Maintenance Multitechnique</h1>
-              <p className="hero-subtitle">Votre fidélité est la preuve de notre expertise</p>
+              <motion.span 
+                className="inline-block bg-white/15 backdrop-blur-md px-6 py-2.5 rounded-lg text-sm font-bold uppercase tracking-widest mb-4 border-2 border-white/30 shadow-lg"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                Facility Solution Group
+              </motion.span>
+              <div className="text-5xl mb-4">
+                <FaTools className="inline-block text-white drop-shadow-2xl" />
+              </div>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase mb-4 leading-tight max-w-5xl mx-auto">Maintenance Multitechnique</h1>
+              <p className="text-lg md:text-xl opacity-95 text-shadow">Votre fidélité est la preuve de notre expertise</p>
             </motion.div>
           </div>
         </div>
@@ -69,22 +89,56 @@ function MaintenanceMultitechniquePage() {
       {/* Services Grid Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-black text-secondary uppercase mb-4">
+              Nos <span className="text-primary">Services</span>
+            </h2>
+            <p className="text-xl text-gray-600">
+              Une expertise complète pour tous vos besoins
+            </p>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className="service-card-modern"
+                className="service-card-premium"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -10 }}
               >
-                <div className="service-icon-modern">
-                  {service.icon}
+                {/* Icon Header */}
+                <div className={`service-icon-header-maintenance bg-gradient-to-br ${service.color}`}>
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                  <div className="absolute bottom-0 left-0 w-20 h-20 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+                  <motion.div 
+                    className="relative z-10 text-white text-6xl drop-shadow-2xl"
+                    whileHover={{ rotate: 360, scale: 1.2 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    {service.icon}
+                  </motion.div>
                 </div>
-                <h3 className="service-title-modern">{service.title}</h3>
-                <p className="service-subtitle-modern">{service.subtitle}</p>
-                <p className="service-description-modern">{service.description}</p>
+                
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-2xl font-black text-secondary mb-2 uppercase tracking-wide group-hover:text-primary transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-base font-semibold text-primary mb-3">{service.subtitle}</p>
+                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                </div>
+
+                {/* Hover Border Effect */}
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary rounded-2xl transition-all duration-300 pointer-events-none"></div>
               </motion.div>
             ))}
           </div>
@@ -159,13 +213,19 @@ function MaintenanceMultitechniquePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <motion.div
-              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border-2 border-white/20 hover:bg-white/15 hover:border-primary transition-all duration-300"
+              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border-2 border-white/20 hover:bg-white/15 hover:border-primary transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="text-6xl mb-6 text-center">🔧</div>
+              <motion.div 
+                className="text-6xl mb-6 text-center text-white"
+                whileHover={{ rotate: 360, scale: 1.2 }}
+                transition={{ duration: 0.6 }}
+              >
+                <FaCogs className="inline-block" />
+              </motion.div>
               <h3 className="text-2xl font-black text-white uppercase mb-4 text-center">Multisites</h3>
               <p className="text-gray-200 text-center leading-relaxed">
                 Nos équipes sont réparties sur tout le Maroc pour intervenir rapidement où que vous soyez
@@ -173,13 +233,19 @@ function MaintenanceMultitechniquePage() {
             </motion.div>
 
             <motion.div
-              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border-2 border-white/20 hover:bg-white/15 hover:border-primary transition-all duration-300"
+              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border-2 border-white/20 hover:bg-white/15 hover:border-primary transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="text-6xl mb-6 text-center">⚡</div>
+              <motion.div 
+                className="text-6xl mb-6 text-center text-white"
+                whileHover={{ rotate: 360, scale: 1.2 }}
+                transition={{ duration: 0.6 }}
+              >
+                <FaClock className="inline-block" />
+              </motion.div>
               <h3 className="text-2xl font-black text-white uppercase mb-4 text-center">Réactivité 24/7</h3>
               <p className="text-gray-200 text-center leading-relaxed">
                 Interventions avec la plus grande réactivité, 24h/24 et 7j/7 pour vos urgences
@@ -187,14 +253,20 @@ function MaintenanceMultitechniquePage() {
             </motion.div>
 
             <motion.div
-              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border-2 border-white/20 hover:bg-white/15 hover:border-primary transition-all duration-300"
+              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border-2 border-white/20 hover:bg-white/15 hover:border-primary transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="text-6xl mb-6 text-center">🎯</div>
-              <h3 className="text-2xl font-black text-white uppercase mb-4 text-center">Multi Métiers</h3>
+              <motion.div 
+                className="text-6xl mb-6 text-center text-white"
+                whileHover={{ rotate: 360, scale: 1.2 }}
+                transition={{ duration: 0.6 }}
+              >
+                <FaUsers className="inline-block" />
+              </motion.div>
+              <h3 className="text-2xl font-black text-white uppercase mb-4 text-center">Multi-Métiers</h3>
               <p className="text-gray-200 text-center leading-relaxed">
                 Une expertise complète couvrant tous vos besoins en maintenance technique
               </p>
@@ -226,15 +298,15 @@ function MaintenanceMultitechniquePage() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl font-black text-secondary uppercase mb-6">
-                Maintenance Multi-Technique
+                Maintenance Multitechnique
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
                 <p>
                   <strong className="text-primary">FSG</strong> offre à l'ensemble de ses clients une panoplie de services 
-                  <strong> multisites, multi activités et multi métiers</strong>. Nos équipes sont réparties sur tout le Maroc.
+                  <strong> multisites, multi-activités et multi-métiers</strong>. Nos équipes sont réparties sur tout le Maroc.
                 </p>
                 <p>
-                  Elles interviennent avec la plus grande réactivité, <strong className="text-primary">24h/24 et 7j/7</strong> sur 
+                  Elles interviennent avec la plus grande réactivité, <strong className="text-primary">24h/24 et 7j/7</strong>, sur 
                   des prestations de maintenance.
                 </p>
                 <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-primary mt-6">
@@ -250,7 +322,7 @@ function MaintenanceMultitechniquePage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary mt-1">•</span>
-                      <span>Climatisation, chauffage, ventilation</span>
+                      <span>Climatisation, chauffage et ventilation</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary mt-1">•</span>
@@ -280,7 +352,7 @@ function MaintenanceMultitechniquePage() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl font-black text-secondary uppercase mb-6">
-                Multitechnique
+                Expertise Multitechnique
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
                 <p>
@@ -292,15 +364,15 @@ function MaintenanceMultitechniquePage() {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <FaBolt className="text-primary text-xl mt-1 flex-shrink-0" />
-                      <span><strong>Génie Climatique:</strong> Installation et maintenance de systèmes CVC</span>
+                      <span><strong>Génie Climatique :</strong> Installation et maintenance de systèmes CVC</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <FaBolt className="text-primary text-xl mt-1 flex-shrink-0" />
-                      <span><strong>Génie Électrique:</strong> Courants forts et faibles</span>
+                      <span><strong>Génie Électrique :</strong> Courants forts et faibles</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <FaWrench className="text-primary text-xl mt-1 flex-shrink-0" />
-                      <span><strong>Maintenance:</strong> Équipements industriels et bâtiments</span>
+                      <span><strong>Maintenance :</strong> Équipements industriels et bâtiments</span>
                     </li>
                   </ul>
                 </div>
@@ -346,8 +418,8 @@ function MaintenanceMultitechniquePage() {
               <FaClock className="text-4xl mx-auto mb-4 text-primary" />
               <h3 className="text-xl font-bold mb-2">Horaires</h3>
               <p className="text-sm opacity-90">Lundi - Vendredi</p>
-              <p className="text-sm opacity-90">8:00 - 18:00</p>
-              <p className="text-sm opacity-90 mt-2">Samedi: 8:00 - 13:00</p>
+              <p className="text-sm opacity-90">8h00 - 18h00</p>
+              <p className="text-sm opacity-90 mt-2">Samedi : 8h00 - 13h00</p>
             </motion.div>
 
             <motion.div
@@ -359,8 +431,8 @@ function MaintenanceMultitechniquePage() {
             >
               <FaMapMarkerAlt className="text-4xl mx-auto mb-4 text-primary" />
               <h3 className="text-xl font-bold mb-2">Adresse</h3>
-              <p className="text-sm opacity-90">Casablanca</p>
-              <p className="text-sm opacity-90">Maroc</p>
+              <p className="text-sm opacity-90">Bd Mohamed V, Technoparc T215</p>
+              <p className="text-sm opacity-90">90100 Tanger, Maroc</p>
             </motion.div>
 
             <motion.div

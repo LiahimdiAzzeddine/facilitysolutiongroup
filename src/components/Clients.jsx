@@ -24,7 +24,7 @@ function Clients() {
             NOS CLIENTS
           </h2>
           <p className="text-base md:text-xl text-gray-600">
-            Ils nous font confiance.
+            Ils nous font confiance
           </p>
         </motion.div>
         
