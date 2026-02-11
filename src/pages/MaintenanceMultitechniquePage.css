@@ -1,0 +1,208 @@
+/* Hero Section */
+.maintenance-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 48, 73, 0.9) 0%, rgba(214, 40, 40, 0.8) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 60vh;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  opacity: 0.95;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+}
+
+/* Modern Service Cards */
+.service-card-modern {
+  background: white;
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d62828, #003049);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.service-card-modern:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card-modern:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  border-color: #d62828;
+}
+
+.service-icon-modern {
+  font-size: 4rem;
+  color: #d62828;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card-modern:hover .service-icon-modern {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.service-title-modern {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #003049;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.service-subtitle-modern {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #d62828;
+  margin-bottom: 1rem;
+}
+
+.service-description-modern {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Sector Progress Bars */
+.sector-item {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.sector-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateX(10px);
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 12px;
+  background: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s ease-out;
+  position: relative;
+}
+
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .service-card-modern {
+    padding: 2rem 1.5rem;
+  }
+
+  .service-icon-modern {
+    font-size: 3rem;
+  }
+
+  .service-title-modern {
+    font-size: 1.5rem;
+  }
+
+  .service-subtitle-modern {
+    font-size: 1rem;
+  }
+}

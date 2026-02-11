@@ -26,7 +26,8 @@ function Header() {
     { path: '/', label: 'Accueil' },
     { path: '/services', label: 'Services' },
     { path: '/a-propos', label: 'À propos' },
-    { path: '/realisations', label: 'Réalisations' },
+    { path: '/maintenance-multitechnique', label: 'M. Multitechnique' },
+    { path: '/e-plaquette', label: 'E-Plaquette' },
     { path: '/contact', label: 'Contact' }
   ];
 
@@ -169,20 +170,6 @@ function Header() {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: menuOpen ? navItems.length * 0.1 : 0 }}
-                className="w-full lg:w-auto mt-5 lg:mt-0"
-              >
-                <Link 
-                  to="/contact" 
-                  className="block lg:inline-block text-center bg-gradient-to-r from-primary to-primary-dark text-white px-7 py-3 rounded-lg font-bold text-sm uppercase tracking-wide shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300"
-                  onClick={closeMenu}
-                >
-                  Devis Gratuit
-                </Link>
-              </motion.div>
             </nav>
           </div>
         </div>

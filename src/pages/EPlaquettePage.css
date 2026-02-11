@@ -1,0 +1,291 @@
+/* E-Plaquette Hero Section */
+.eplaquette-hero {
+  position: relative;
+  width: 100%;
+  min-height: 50vh;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 48, 73, 0.9) 0%, rgba(214, 40, 40, 0.8) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 4rem 2rem;
+}
+
+/* FlipBook Container */
+.flipbook-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  perspective: 2500px;
+}
+
+.flipbook-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 700px;
+}
+
+.flipbook {
+  margin: 0 auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* PDF Page Wrapper */
+.pdf-page-wrapper {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+.pdf-page-content {
+  width: 100%;
+  height: 100%;
+}
+
+.pdf-page-content canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  color: white;
+}
+
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #d62828;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  padding: 2rem;
+}
+
+/* Book Controls */
+.book-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #d62828 0%, #c41e1e 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(214, 40, 40, 0.4);
+}
+
+.nav-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(214, 40, 40, 0.6);
+}
+
+.nav-button:active {
+  transform: scale(0.95);
+}
+
+.page-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  min-width: 120px;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+}
+
+.current-page {
+  color: #d62828;
+  font-size: 2rem;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.total-pages {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .flipbook-wrapper {
+    padding: 1rem;
+  }
+  
+  .cover-title {
+    font-size: 2rem;
+  }
+  
+  .cover-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .flipbook-wrapper {
+    min-height: 500px;
+    padding: 0.5rem;
+  }
+
+  .page-content {
+    padding: 1.5rem;
+  }
+
+  .cover-logo {
+    width: 100px;
+  }
+
+  .cover-title {
+    font-size: 1.5rem;
+  }
+
+  .cover-subtitle {
+    font-size: 1rem;
+  }
+
+  .cover-tagline {
+    font-size: 0.9rem;
+  }
+
+  .page-title {
+    font-size: 1.3rem;
+  }
+
+  .page-text {
+    font-size: 0.9rem;
+  }
+
+  .page-image {
+    height: 150px;
+  }
+
+  .clients-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .book-controls {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .nav-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .page-indicator {
+    font-size: 1.2rem;
+    min-width: 100px;
+    padding: 0.5rem 1rem;
+  }
+
+  .current-page {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-content {
+    padding: 1rem;
+  }
+
+  .cover-title {
+    font-size: 1.2rem;
+  }
+
+  .page-title {
+    font-size: 1.1rem;
+  }
+
+  .page-text {
+    font-size: 0.85rem;
+  }
+}

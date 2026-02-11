@@ -12,6 +12,8 @@ import ServicesPage from './pages/ServicesPage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import RealisationsPage from './pages/RealisationsPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
+import MaintenanceMultitechniquePage from './pages/MaintenanceMultitechniquePage.jsx';
+import EPlaquettePage from './pages/EPlaquettePage.jsx';
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -63,6 +65,8 @@ function App() {
                 <Route path="/a-propos" element={<AboutPage />} />
                 <Route path="/realisations" element={<RealisationsPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+                <Route path="/maintenance-multitechnique" element={<MaintenanceMultitechniquePage />} />
+                <Route path="/e-plaquette" element={<EPlaquettePage />} />
               </Routes>
             </AnimatePresence>
             <Contact />

@@ -18,7 +18,7 @@ function Hero() {
       title: 'Maintenance Multitechnique',
       subtitle: 'Votre fidélité est la preuve de notre expertise',
       buttonText: 'Découvrir',
-      buttonLink: '#services',
+      buttonLink: '/maintenance-multitechnique',
       image: '/ElectInstal01.jpg'
     },
     {
