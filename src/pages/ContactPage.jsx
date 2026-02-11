@@ -32,8 +32,8 @@ function ContactPage() {
     // Remplacez ces valeurs par vos propres identifiants EmailJS
     // Obtenez-les sur https://www.emailjs.com/
     const SERVICE_ID = 'YOUR_SERVICE_ID';
-    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+    const TEMPLATE_ID = 'template_a7chqyr';
+    const PUBLIC_KEY = '7EDQHBOwc8ZRTKoKA';
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
       .then((result) => {
@@ -72,7 +72,7 @@ function ContactPage() {
     {
       icon: <FaMapMarkerAlt />,
       title: 'Adresse',
-      content: 'Bd Mohamed V, Technoparc T215, 90100 Tanger, Maroc',
+      content: '29 Rue AMR IBN ASS N26 Tanger MA',
       color: 'from-purple-500 to-pink-500'
     },
     {
@@ -93,7 +93,7 @@ function ContactPage() {
     >
       <SEO 
         title="Contactez-nous - Facility Solution Group Maroc"
-        description="Contactez FSG Maroc pour vos besoins en maintenance multitechnique, climatisation et services industriels. Disponibles 24/7. Devis gratuit et intervention rapide."
+        description="Contactez FSG Maroc pour vos besoins en maintenance multitechnique, climatisation et services industriels. Disponibles 24/7. Demander votre devis et intervention rapide."
         keywords="contact fsg maroc, devis maintenance maroc, contact climatisation maroc, urgence maintenance, service client fsg"
         url="https://facilitysolutiongroup.ma/contact"
       />

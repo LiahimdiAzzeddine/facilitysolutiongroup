@@ -4,8 +4,8 @@ function Clients() {
   const clients = [
     { name: 'Arenor', logo: '/clients/arenorlog-1.png' },
     { name: 'CIR', logo: '/clients/Cir.png' },
-    { name: 'City Mall', logo: '/clients/citymalllog.png' },
-    { name: 'McDonald\'s', logo: '/clients/mcdolog.png' },
+    { name: 'City Mall', logo: '/clients/decoescalog.png' },
+    { name: 'McDonald\'s', logo: '/clients/estheticaog.png' },
     { name: 'Paper', logo: '/clients/paper.png' }
     
   ];

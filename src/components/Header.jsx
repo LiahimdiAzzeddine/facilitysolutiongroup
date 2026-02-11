@@ -24,10 +24,10 @@ function Header() {
 
   const navItems = [
     { path: '/', label: 'Accueil' },
+    { path: '/e-plaquette', label: 'E-Plaquette' },
+    { path: '/maintenance-multitechnique', label: 'M. Multitechnique' },
     { path: '/services', label: 'Services' },
     { path: '/a-propos', label: 'À propos' },
-    { path: '/maintenance-multitechnique', label: 'M. Multitechnique' },
-    { path: '/e-plaquette', label: 'E-Plaquette' },
     { path: '/contact', label: 'Contact' }
   ];
 

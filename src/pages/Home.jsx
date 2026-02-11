@@ -3,6 +3,7 @@ import CompanyOverview from '../components/CompanyOverview';
 import Services from '../components/Services';
 import About from '../components/About';
 import Features from '../components/Features';
+import GMAO from '../components/GMAO';
 import Team from '../components/Team';
 import Clients from '../components/Clients';
 import SEO from '../components/SEO';
@@ -18,10 +19,11 @@ function Home() {
       />
       <Hero />
       <CompanyOverview />
+      <About />
       <Services />
       <Features />
-      <About />
-      <Team />
+      <GMAO />
+      {/* <Team /> */}
       <Clients />
     </>
   );

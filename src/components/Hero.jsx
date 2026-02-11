@@ -25,7 +25,7 @@ function Hero() {
       id: 2,
       title: 'Installation & Maintenance CVC',
       subtitle: 'Solutions complètes pour vos systèmes de climatisation',
-      buttonText: 'Devis Gratuit',
+      buttonText: 'Demander votre devis',
       buttonLink: '/contact',
       image: '/HVAC1.jpg'
     },
@@ -54,7 +54,7 @@ function Hero() {
     {
       icon: <FaMapMarkerAlt />,
       title: 'ADRESSE',
-      content: 'Bd Mohamed V, Technoparc T215, 90100 Tanger'
+      content: '29 Rue AMR IBN ASS N26 Tanger MA'
     }
   ];
 

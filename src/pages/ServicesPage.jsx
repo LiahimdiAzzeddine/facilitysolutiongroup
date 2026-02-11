@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaSnowflake, FaBolt, FaFire, FaWrench, FaArrowRight, FaCheckCircle, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaSnowflake, FaBolt, FaArrowRight, FaCheckCircle, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { GiElectricalResistance } from 'react-icons/gi';
+import { PiFanDuotone } from 'react-icons/pi';
 import SEO from '../components/SEO';
 import './ServicesPage.css';
 
@@ -16,7 +18,7 @@ function ServicesPage() {
       title: 'GÉNIE CLIMATIQUE',
       subtitle: 'CVC - Climatisation, Ventilation & Chauffage',
       description: 'Plus de 10 ans d\'expérience dans l\'industrie de la climatisation. Notre Société conçoit, réalise et entretient tout type d\'installation de génie climatique pour les secteurs tertiaire, industriel, les collectivités et les particuliers.',
-      icon: <FaSnowflake />,
+      icon: <PiFanDuotone />,
       details: [
         'Ventilation naturelle (AIR) et désenfumage naturel',
         'Solutions de climatisation professionnelle',
@@ -54,7 +56,7 @@ function ServicesPage() {
         'Chargés d\'affaires expérimentés dédiés'
       ],
       specialties: [
-        { name: 'Expertise CVC', desc: 'Le métier de l\'électricité dans le milieu de la CVC demande un savoir-faire à part entière. En plus des compétences électriques traditionnelles, l\'électricité CVC nécessite un fort acquis dans les domaines de l\'hydraulique et l\'aéraulique.' },
+        // { name: 'Expertise CVC', desc: 'Le métier de l\'électricité dans le milieu de la CVC demande un savoir-faire à part entière. En plus des compétences électriques traditionnelles, l\'électricité CVC nécessite un fort acquis dans les domaines de l\'hydraulique et l\'aéraulique.' },
         { name: 'Process', desc: 'Adaptation à l\'environnement de chaque client pour répondre précisément aux besoins de process industriels.' },
         { name: 'Confort', desc: 'Solutions optimisées pour le confort des occupants dans les bâtiments tertiaires et résidentiels.' },
         { name: 'Gestion d\'énergie', desc: 'Systèmes intelligents de gestion et d\'optimisation de la consommation énergétique.' }
@@ -66,7 +68,7 @@ function ServicesPage() {
       title: 'FROID INDUSTRIEL & COMMERCIAL',
       subtitle: 'Solutions Professionnelles de Réfrigération',
       description: 'Une offre globale pour vos besoins professionnels en matière de froid. Nous intervenons dans multiples domaines d\'activités pour garantir le maintien d\'une température idéale pour vos produits.',
-      icon: <FaWrench />,
+      icon: <FaSnowflake />,
       details: [
         'Chambres froides positives & négatives',
         'Vitrines réfrigérées (groupe logé/déporté)',
@@ -92,10 +94,10 @@ function ServicesPage() {
       title: 'COURANT FAIBLE',
       subtitle: 'Sécurité & Connectivité des Bâtiments',
       description: 'FSG assure sécurité et connectivité intelligentes de vos espaces. Nous optimisons la performance et la sécurité de vos environnements professionnels en déployant des solutions complètes de Courant Faible.',
-      icon: <FaFire />,
+      icon: <GiElectricalResistance />,
       details: [
         'Systèmes de Sécurité Incendie (SSI)',
-        'Détection & Alarme incendie',
+        'Détection & Alarme d\'incendie',
         'Contrôle d\'accès et anti-intrusion',
         'Vidéosurveillance professionnelle (CCTV)',
         'Câblage VDI (Voix - Données - Image)',

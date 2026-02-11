@@ -5,6 +5,7 @@ import {
   FaUtensils, FaShoppingCart, FaHardHat, FaCogs,
   FaWind, FaDraftingCompass, FaCheckCircle, FaArrowRight
 } from 'react-icons/fa';
+import { PiFanDuotone } from 'react-icons/pi';
 import SEO from '../components/SEO';
 import './AboutPage.css';
 
@@ -224,8 +225,8 @@ function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
-              { icon: <FaSnowflake />, title: 'Génie Climatique', desc: 'Climatisation, ventilation et chauffage', color: 'from-blue-500 to-cyan-500' },
-              { icon: <FaWrench />, title: 'Froid Industriel', desc: 'Chambres froides et systèmes de réfrigération', color: 'from-purple-500 to-indigo-500' },
+              { icon: <PiFanDuotone />, title: 'Génie Climatique', desc: 'Climatisation, ventilation et chauffage', color: 'from-blue-500 to-cyan-500' },
+              { icon: <FaSnowflake />, title: 'Froid Industriel', desc: 'Chambres froides et systèmes de réfrigération', color: 'from-purple-500 to-indigo-500' },
               { icon: <FaBolt />, title: 'Électricité', desc: 'Installations électriques complètes', color: 'from-yellow-500 to-orange-500' },
               { icon: <FaWind />, title: 'Ventilation', desc: 'Systèmes de ventilation et d\'extraction', color: 'from-teal-500 to-cyan-500' },
               { icon: <FaTools />, title: 'Maintenance Multitechnique', desc: 'Entretien préventif et curatif', color: 'from-red-500 to-pink-500' },

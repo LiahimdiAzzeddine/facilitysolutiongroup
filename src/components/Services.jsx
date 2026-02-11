@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaSnowflake, FaBolt, FaFire, FaWrench, FaArrowRight } from 'react-icons/fa';
+import { GiElectricalResistance } from 'react-icons/gi';
+import { PiFanDuotone } from 'react-icons/pi';
 
 function Services() {
   const navigate = useNavigate();
@@ -23,31 +25,32 @@ function Services() {
     }, 100);
   };
   const services = [
-    {
-      title: 'CVC',
-      description: 'Climatisation, ventilation et chauffage pour tous secteurs.',
-      icon: <FaSnowflake />,
-      link: '/services#génie-climatique',
-      color: 'from-blue-500 to-cyan-500'
-    },
+  
     {
       title: 'Électricité',
       description: 'Installation électrique industrielle et distribution de puissance.',
       icon: <FaBolt />,
       link: '/services#génie-électrique',
       color: 'from-yellow-500 to-orange-500'
+    }, 
+     {
+      title: 'CVC',
+      description: 'Climatisation, ventilation et chauffage pour tous secteurs.',
+      icon: <PiFanDuotone />,
+      link: '/services#génie-climatique',
+      color: 'from-blue-500 to-cyan-500'
     },
     {
-      title: 'Froid Industriel',
+      title: 'Froid',
       description: 'Chambres froides, vitrines et systèmes de réfrigération.',
-      icon: <FaWrench />,
+      icon: <FaSnowflake />,
       link: '/services#froid-industriel--commercial',
       color: 'from-purple-500 to-indigo-500'
     },
     {
       title: 'Courant Faible',
       description: 'Sécurité, vidéosurveillance, contrôle d\'accès et câblage VDI.',
-      icon: <FaFire />,
+      icon: <GiElectricalResistance />,
       link: '/services#courant-faible',
       color: 'from-red-500 to-pink-500'
     }

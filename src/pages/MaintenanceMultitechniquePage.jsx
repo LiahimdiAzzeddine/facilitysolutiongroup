@@ -1,19 +1,20 @@
 import { motion } from 'framer-motion';
 import { 
   FaSnowflake, FaBolt, FaFire, FaWrench, FaPhone, FaEnvelope, 
-  FaMapMarkerAlt, FaClock, FaTools, FaBuilding, FaIndustry,
-  FaShoppingCart, FaHardHat, FaCheckCircle, FaArrowRight,
-  FaCogs, FaShieldAlt, FaUsers
+  FaMapMarkerAlt, FaClock, FaTools,
+  FaCogs, FaUsers
 } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import './MaintenanceMultitechniquePage.css';
+import { PiFanDuotone } from 'react-icons/pi';
+import { GiElectricalResistance } from 'react-icons/gi';
 
 function MaintenanceMultitechniquePage() {
   const services = [
     {
       title: 'CVC',
       subtitle: 'Climatisation, Ventilation & Chauffage',
-      icon: <FaSnowflake />,
+      icon: <PiFanDuotone />,
       description: 'Solutions complètes pour vos systèmes de climatisation, ventilation et chauffage',
       color: 'from-blue-500 to-cyan-500'
     },
@@ -25,17 +26,17 @@ function MaintenanceMultitechniquePage() {
       color: 'from-yellow-500 to-orange-500'
     },
     {
-      title: 'Froid Industriel',
-      subtitle: 'Froid Industriel & Commercial',
-      icon: <FaWrench />,
+      title: 'Froid',
+      subtitle: 'Froid & Commercial',
+      icon: <FaSnowflake />,
       description: 'Systèmes de réfrigération pour l\'industrie et le commerce',
       color: 'from-purple-500 to-indigo-500'
     },
     {
-      title: 'Gaz & Fluides',
-      subtitle: 'Gaz & Fluides Spéciaux',
-      icon: <FaFire />,
-      description: 'Installation et maintenance de systèmes de gaz et fluides spéciaux',
+      title: 'Courant Faible',
+      subtitle: 'Sécurité',
+      icon: <GiElectricalResistance />,
+      description:'Centrale d\'Incendie, vidéosurveillance, contrôle d\'accès et câblage VDI.' ,
       color: 'from-red-500 to-pink-500'
     }
   ];

@@ -7,7 +7,7 @@ function Team() {
   const teamMembers = [
     {
       id: 1,
-      name: 'Ahmed Benali',
+      name: 'Amine',
       role: 'Directeur Général',
       image: 'https://i.pravatar.cc/300?img=12',
       bio: 'Travaillant à l\'intersection de la gestion stratégique et de l\'innovation technique, Ahmed a le privilège de collaborer avec une variété de clients et a perfectionné ses compétences dans la livraison de solutions de haute qualité.',
@@ -17,12 +17,12 @@ function Team() {
     
     {
       id: 3,
-      name: 'Karim El Amrani',
-      role: 'Chef de Projet',
-      image: 'https://i.pravatar.cc/300?img=33',
-      bio: 'Spécialiste en installations frigorifiques avec une expertise reconnue dans la gestion de projets complexes. Karim assure la coordination parfaite entre les équipes techniques et les clients.',
-      loves: 'Gestion de projet, Froid industriel, Innovation technologique',
-      hates: 'Retards de projet, Manque de communication'
+      name: 'Azzeddine',
+      role: 'Assistance Informatique',
+      image: '/public/azzeddine.jpg',
+      bio: 'Expert en support informatique et solutions technologiques. Azzeddine assure la maintenance des systèmes informatiques et accompagne l\'équipe dans l\'optimisation des outils numériques.',
+      loves: 'Technologies de l\'information, Résolution de problèmes, Automatisation',
+      hates: 'Bugs non résolus, Systèmes obsolètes'
     },
     {
       id: 4,

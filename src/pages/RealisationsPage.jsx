@@ -69,7 +69,7 @@ function RealisationsPage() {
 
           <div className="cta-section">
             <h2>Vous avez un projet ?</h2>
-            <p>Contactez-nous pour discuter de vos besoins et obtenir un devis gratuit</p>
+            <p>Contactez-nous pour discuter de vos besoins et demander votre devis</p>
             <a href="/contact" className="btn">Demander un devis</a>
           </div>
         </div>
