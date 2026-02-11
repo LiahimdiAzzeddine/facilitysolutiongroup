@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaHeadset, FaPaperPlane, FaComments } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
+import SEO from '../components/SEO';
 import './ContactPage.css';
 
 function ContactPage() {
+  const form = useRef();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,6 +14,8 @@ function ContactPage() {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -21,14 +26,32 @@ function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Message envoyé ! Nous vous contacterons bientôt.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    // Remplacez ces valeurs par vos propres identifiants EmailJS
+    // Obtenez-les sur https://www.emailjs.com/
+    const SERVICE_ID = 'YOUR_SERVICE_ID';
+    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      .then((result) => {
+        console.log('Email envoyé avec succès:', result.text);
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+        setIsSubmitting(false);
+      }, (error) => {
+        console.error('Erreur lors de l\'envoi:', error.text);
+        setSubmitStatus('error');
+        setIsSubmitting(false);
+      });
   };
 
   const contactInfo = [
@@ -68,8 +91,14 @@ function ContactPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
+      <SEO 
+        title="Contactez-nous - Facility Solution Group Maroc"
+        description="Contactez FSG Maroc pour vos besoins en maintenance multitechnique, climatisation et services industriels. Disponibles 24/7. Devis gratuit et intervention rapide."
+        keywords="contact fsg maroc, devis maintenance maroc, contact climatisation maroc, urgence maintenance, service client fsg"
+        url="https://facilitysolutiongroup.ma/contact"
+      />
       {/* Hero Section */}
-      <section className="contact-hero">
+      <section className="relative w-full min-h-[50vh] overflow-hidden pt-20 md:pt-[120px]">
         <div 
           className="hero-background"
           style={{ backgroundImage: 'url(/MultiTechniFSG-2.jpg)' }}
@@ -77,26 +106,26 @@ function ContactPage() {
           <div className="hero-overlay"></div>
           <div className="container mx-auto px-4">
             <motion.div
-              className="hero-content"
+              className="relative z-[3] min-h-[55vh] flex flex-col justify-center items-center text-center text-white py-8 md:py-24"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <motion.span 
-                className="inline-block bg-white/15 backdrop-blur-md px-6 py-2.5 rounded-lg text-sm font-bold uppercase tracking-widest mb-4 border-2 border-white/30 shadow-lg"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                Facility Solution Group
-              </motion.span>
-              <div className="text-5xl mb-4">
+             <motion.span 
+                                   className="inline-block bg-white/15 backdrop-blur-md px-4 md:px-6 py-2 md:py-2.5 rounded-lg text-xs md:text-sm font-bold uppercase tracking-wider md:tracking-widest mb-4 md:mb-6 border-2 border-white/30 shadow-lg"
+                                   initial={{ opacity: 0, scale: 0.5 }}
+                                   whileInView={{ opacity: 1, scale: 1 }}
+                                   transition={{ duration: 0.5, delay: 0.2 }}
+                                 >
+                                  Performance. Fiabilité. Durabilité.
+                                 </motion.span>
+              <div className="text-3xl md:text-5xl mb-4 md:mb-6">
                 <FaComments className="inline-block text-white drop-shadow-2xl" />
               </div>
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase mb-4 leading-tight max-w-5xl mx-auto">
+              <h1 className="text-xl md:text-3xl lg:text-4xl font-black uppercase mb-4 leading-tight max-w-5xl mx-auto" style={{ textShadow: '2px 4px 12px rgba(0, 0, 0, 0.3)' }}>
                 <span className="text-primary">Parlons de votre projet</span>
               </h1>
-              <p className="text-lg md:text-xl opacity-95 mb-6">N'hésitez pas à nous contacter pour toute demande d'information</p>
+              <p className="text-base md:text-lg lg:text-xl opacity-95 mb-6" style={{ textShadow: '1px 2px 6px rgba(0, 0, 0, 0.3)' }}>N'hésitez pas à nous contacter pour toute demande d'information</p>
             </motion.div>
           </div>
         </div>
@@ -170,7 +199,19 @@ function ContactPage() {
                   Envoyez-nous un message
                 </h2>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                {submitStatus === 'success' && (
+                  <div className="mb-6 p-4 bg-green-50 border-2 border-green-500 rounded-lg text-green-700 font-semibold">
+                    ✓ Message envoyé avec succès ! Nous vous contacterons bientôt.
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="mb-6 p-4 bg-red-50 border-2 border-red-500 rounded-lg text-red-700 font-semibold">
+                    ✗ Erreur lors de l'envoi. Veuillez réessayer.
+                  </div>
+                )}
+                
+                <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-bold text-secondary uppercase tracking-wide mb-2">
@@ -251,12 +292,13 @@ function ContactPage() {
                   
                   <motion.button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-primary to-primary-dark text-white px-8 py-4 rounded-lg font-bold text-base uppercase tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-primary to-primary-dark text-white px-8 py-4 rounded-lg font-bold text-base uppercase tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                    whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                    whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                   >
                     <FaPaperPlane />
-                    Envoyer le message
+                    {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
                   </motion.button>
                 </form>
               </div>

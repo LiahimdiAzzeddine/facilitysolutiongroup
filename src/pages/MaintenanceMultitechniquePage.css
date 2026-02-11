@@ -1,12 +1,3 @@
-/* Hero Section */
-.maintenance-hero {
-  position: relative;
-  width: 100%;
-  height: 50vh;
-  min-height: 400px;
-  overflow: hidden;
-}
-
 .hero-background {
   position: absolute;
   top: 0;
@@ -36,39 +27,6 @@
     radial-gradient(circle at 20% 50%, rgba(250, 197, 20, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
   z-index: 2;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 3;
-  height: 50vh;
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 2rem 2rem 3rem 2rem;
-}
-
-.hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-  text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
-  line-height: 1.2;
-}
-
-.hero-subtitle {
-  font-size: clamp(1.125rem, 2vw, 1.75rem);
-  font-weight: 400;
-  opacity: 0.95;
-  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.3);
-  max-width: 800px;
-  line-height: 1.5;
 }
 
 /* Modern Service Cards - Style À Propos */
@@ -250,25 +208,6 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .maintenance-hero {
-    height: 45vh;
-    min-height: 350px;
-  }
-
-  .hero-content {
-    height: 45vh;
-    min-height: 350px;
-    padding: 1.5rem 1.5rem 2.5rem 1.5rem;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.125rem;
-  }
-
   .service-card-modern {
     padding: 2.5rem 1.5rem;
   }

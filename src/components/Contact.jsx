@@ -55,7 +55,7 @@ function Contact() {
           {contactInfo.map((info, index) => (
             <motion.div
               key={index}
-              className="relative bg-white rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl border-2 border-gray-100 hover:border-primary transition-all duration-300 group overflow-hidden"
+              className="relative bg-white rounded-2xl p-4 md:p-6 shadow-xl hover:shadow-2xl border-2 border-gray-100 hover:border-primary transition-all duration-300 group overflow-hidden"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -68,12 +68,12 @@ function Contact() {
               </div>
               
               {/* Title */}
-              <h3 className="text-lg font-black text-secondary uppercase tracking-wide mb-4 group-hover:text-primary transition-colors duration-300">
+              <h3 className="text-lg font-black text-secondary uppercase tracking-wide mb-2 group-hover:text-primary transition-colors duration-300">
                 {info.title}
               </h3>
               
               {/* Content */}
-              <div className="space-y-2">
+              <div className="space-y-1 text-sm">
                 {info.content.map((line, i) => (
                   info.link && i === 0 ? (
                     <a

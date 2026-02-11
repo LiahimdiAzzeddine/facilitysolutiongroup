@@ -84,7 +84,7 @@ function Hero() {
                 className="relative h-full w-full bg-cover bg-center bg-no-repeat flex items-center justify-center"
                 style={{ backgroundImage: `url(${slide.image})` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/85 to-primary/75 z-[1]"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/75 to-primary/55 z-[1]"></div>
                 <div className="container mx-auto px-4">
                   <motion.div 
                     className="relative z-[2] text-center text-white max-w-4xl mx-auto px-4 md:px-5"

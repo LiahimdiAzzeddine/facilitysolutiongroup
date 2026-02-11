@@ -58,15 +58,15 @@ function CompanyOverview() {
             </motion.span>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-secondary uppercase mb-6 leading-tight">
-              Votre Partenaire en <span className="text-primary">Solutions Techniques</span>
+              Leader en <span className="text-primary">Ingénierie Multitechnique</span>
             </h2>
 
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              <strong className="text-primary">FSG</strong> intervient sur tout le Maroc pour réaliser, exploiter et maintenir les installations de nos clients des secteurs <strong>industriel et tertiaire</strong>.
+              <strong className="text-primary">FSG</strong> est une entreprise marocaine spécialisée dans l'ingénierie et la maintenance multitechnique. Nous intervenons sur l'ensemble du territoire national auprès des secteurs <strong>industriel et tertiaire</strong>.
             </p>
 
             <p className="text-base text-gray-600 leading-relaxed mb-8">
-              Du génie climatique au froid industriel, en passant par l'électricité et la ventilation, nous déployons nos expertises via notre bureau d'études, nos concepteurs et nos monteurs.
+              Notre expertise couvre quatre domaines clés : le génie climatique, l'électricité industrielle, le froid commercial et industriel, ainsi que les systèmes de courant faible. Nous accompagnons nos clients de la conception à la maintenance.
             </p>
 
             <motion.a

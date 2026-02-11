@@ -5,6 +5,7 @@ import {
   FaUtensils, FaShoppingCart, FaHardHat, FaCogs,
   FaWind, FaDraftingCompass, FaCheckCircle, FaArrowRight
 } from 'react-icons/fa';
+import SEO from '../components/SEO';
 import './AboutPage.css';
 
 function AboutPage() {
@@ -29,8 +30,14 @@ function AboutPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
+      <SEO 
+        title="À Propos - Facility Solution Group Maroc"
+        description="Découvrez FSG Maroc : 10 ans d'expérience en maintenance multitechnique. Leader en climatisation, électricité et froid industriel. Plus de 150 clients satisfaits au Maroc."
+        keywords="à propos fsg maroc, entreprise maintenance maroc, histoire fsg, expertise maintenance, société climatisation maroc, facility management maroc"
+        url="https://facilitysolutiongroup.ma/a-propos"
+      />
       {/* Hero Section */}
-      <section className="about-hero">
+      <section className="relative w-full min-h-[50vh] overflow-hidden pt-20 md:pt-[120px]">
         <div 
           className="hero-background"
           style={{ backgroundImage: 'url(/energetique_froid_AdobeStock_2956959112.jpg)' }}
@@ -38,23 +45,23 @@ function AboutPage() {
           <div className="hero-overlay"></div>
           <div className="container mx-auto px-4">
             <motion.div
-              className="hero-content"
+              className="relative z-[3] min-h-[55vh] flex flex-col justify-center items-center text-center text-white py-8 md:py-24"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               <motion.span 
-                className="inline-block bg-white/15 backdrop-blur-md px-6 py-2.5 rounded-lg text-sm font-bold uppercase tracking-widest mb-4 border-2 border-white/30 shadow-lg"
+                className="inline-block bg-white/15 backdrop-blur-md px-4 md:px-6 py-2 md:py-2.5 rounded-lg text-xs md:text-sm font-bold uppercase tracking-wider md:tracking-widest mb-4 md:mb-6 border-2 border-white/30 shadow-lg"
                 initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
               >
-                Facility Solution Group
+                Performance. Fiabilité. Durabilité.
               </motion.span>
-              <div className="text-5xl mb-4">
+              <div className="text-3xl md:text-5xl mb-4 md:mb-6">
                 <FaBuilding className="inline-block text-white drop-shadow-2xl" />
               </div>
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase mb-4 leading-tight max-w-5xl mx-auto">
+              <h1 className="text-xl md:text-3xl lg:text-4xl font-black uppercase mb-4 leading-tight max-w-5xl mx-auto" style={{ textShadow: '2px 4px 12px rgba(0, 0, 0, 0.3)' }}>
                 <span className="text-primary">L'agilité et la solidité</span> d'une entreprise à taille humaine pour répondre aux <span className="text-primary">enjeux énergétiques de vos bâtiments</span>
               </h1>
             </motion.div>

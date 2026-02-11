@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaSnowflake, FaBolt, FaFire, FaWrench, FaArrowRight, FaCheckCircle, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import SEO from '../components/SEO';
 import './ServicesPage.css';
 
 function ServicesPage() {
@@ -123,8 +124,14 @@ function ServicesPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
+      <SEO 
+        title="Nos Services - Maintenance Multitechnique & Climatisation"
+        description="Découvrez nos services professionnels : génie climatique (CVC), électricité industrielle, froid industriel, plomberie et maintenance multitechnique. Solutions complètes pour entreprises au Maroc."
+        keywords="services maintenance maroc, génie climatique maroc, CVC maroc, électricité industrielle, froid industriel, plomberie professionnelle, maintenance multitechnique, climatisation professionnelle"
+        url="https://facilitysolutiongroup.ma/services"
+      />
       {/* Hero Section */}
-      <section className="services-hero">
+      <section className="relative w-full min-h-[50vh] overflow-hidden pt-20 md:pt-[120px]">
         <div 
           className="hero-background"
           style={{ backgroundImage: 'url(/HVAC1.jpg)' }}
@@ -132,22 +139,22 @@ function ServicesPage() {
           <div className="hero-overlay"></div>
           <div className="container mx-auto px-4">
             <motion.div
-              className="hero-content"
+              className="relative z-[3] min-h-[55vh] flex flex-col justify-center items-center text-center text-white py-8 md:py-28"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <motion.span 
-                className="inline-block bg-white/15 backdrop-blur-md px-6 py-2.5 rounded-lg text-sm font-bold uppercase tracking-widest mb-4 border-2 border-white/30 shadow-lg"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                Facility Solution Group
-              </motion.span>
+           <motion.span 
+                      className="inline-block bg-white/15 backdrop-blur-md px-4 md:px-6 py-2 md:py-2.5 rounded-lg text-xs md:text-sm font-bold uppercase tracking-wider md:tracking-widest mb-4 md:mb-6 border-2 border-white/30 shadow-lg"
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                     Performance. Fiabilité. Durabilité.
+                    </motion.span>
               
-              <h1 className="hero-title">Nos Services</h1>
-              <p className="hero-subtitle">
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight mb-6" style={{ textShadow: '2px 4px 12px rgba(0, 0, 0, 0.3)' }}>Nos Services</h1>
+              <p className="text-base md:text-lg lg:text-xl font-normal opacity-95 max-w-3xl leading-relaxed" style={{ textShadow: '1px 2px 6px rgba(0, 0, 0, 0.3)' }}>
                 Des solutions complètes et professionnelles pour tous vos besoins industriels et tertiaires
               </p>
             </motion.div>

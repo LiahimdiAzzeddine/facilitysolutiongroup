@@ -34,10 +34,10 @@ function About() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-secondary uppercase tracking-wide mb-4 md:mb-6">
-            FACILITY SOLUTION GROUP
+            Nos Domaines d'Excellence
           </h2>
           <p className="text-base md:text-xl text-gray-600 leading-relaxed px-4">
-            Nous opérons dans les secteurs industriel et du bâtiment, offrant des services de rénovation, d'agencement et d'entretien.
+            Des solutions techniques complètes pour optimiser la performance énergétique et le confort de vos installations industrielles et tertiaires.
           </p>
         </motion.div>
         

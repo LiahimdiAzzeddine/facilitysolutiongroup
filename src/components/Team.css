@@ -1,0 +1,315 @@
+.team-section {
+  padding: 100px 20px;
+  background: #f8f9fa;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.team-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.team-subtitle {
+  font-size: 1.125rem;
+  color: #666;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.team-member {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-8px);
+}
+
+.team-avatar {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 16px;
+  position: relative;
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  filter: grayscale(10%);
+  transition: filter 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.team-member:hover .team-avatar img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+  border-color: #fbbf24;
+}
+
+.team-member-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.team-member-role {
+  font-size: 1rem;
+  color: #888;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-section {
+    padding: 80px 20px;
+  }
+
+  .team-title {
+    font-size: 2.25rem;
+  }
+
+  .team-subtitle {
+    font-size: 1rem;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+  }
+
+  .team-avatar {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-title {
+    font-size: 1.875rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .team-avatar {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+
+/* Cursor pointer for clickable members */
+.team-member {
+  cursor: pointer;
+}
+
+/* Modal Overlay */
+.team-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Container */
+.team-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.team-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.team-modal-close:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: rotate(90deg);
+}
+
+/* Modal Content */
+.team-modal-content {
+  display: flex;
+  gap: 40px;
+  padding: 50px;
+}
+
+.team-modal-image {
+  flex-shrink: 0;
+}
+
+.team-modal-image img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.team-modal-info {
+  flex: 1;
+}
+
+.team-modal-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.team-modal-role {
+  font-size: 1.125rem;
+  color: #888;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.team-modal-bio {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.team-modal-section {
+  margin-bottom: 24px;
+}
+
+.team-modal-section-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.team-modal-section-text {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+  .team-modal-content {
+    flex-direction: column;
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .team-modal-image img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .team-modal-name {
+    font-size: 1.75rem;
+  }
+
+  .team-modal-close {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-modal-content {
+    padding: 30px 20px;
+  }
+
+  .team-modal-name {
+    font-size: 1.5rem;
+  }
+
+  .team-modal-bio {
+    font-size: 0.95rem;
+  }
+}

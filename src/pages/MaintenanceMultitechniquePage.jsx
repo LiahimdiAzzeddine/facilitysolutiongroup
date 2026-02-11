@@ -5,6 +5,7 @@ import {
   FaShoppingCart, FaHardHat, FaCheckCircle, FaArrowRight,
   FaCogs, FaShieldAlt, FaUsers
 } from 'react-icons/fa';
+import SEO from '../components/SEO';
 import './MaintenanceMultitechniquePage.css';
 
 function MaintenanceMultitechniquePage() {
@@ -54,8 +55,14 @@ function MaintenanceMultitechniquePage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
+      <SEO 
+        title="Maintenance Multitechnique - Solutions Complètes FSG Maroc"
+        description="Maintenance multitechnique professionnelle au Maroc : CVC, électricité, froid industriel, plomberie. Contrats de maintenance préventive et curative. Intervention 24/7."
+        keywords="maintenance multitechnique maroc, contrat maintenance maroc, maintenance préventive, maintenance curative, facility management maroc, maintenance industrielle"
+        url="https://facilitysolutiongroup.ma/maintenance-multitechnique"
+      />
       {/* Hero Section */}
-      <section className="maintenance-hero">
+      <section className="relative w-full min-h-[50vh] overflow-hidden pt-20 md:pt-[120px]">
         <div 
           className="hero-background"
           style={{ backgroundImage: 'url(/ElectInstal01.jpg)' }}
@@ -63,24 +70,24 @@ function MaintenanceMultitechniquePage() {
           <div className="hero-overlay"></div>
           <div className="container mx-auto px-4">
             <motion.div
-              className="hero-content"
+              className="relative z-[3] min-h-[55vh] flex flex-col justify-center items-center text-center text-white py-8 md:py-24"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               <motion.span 
-                className="inline-block bg-white/15 backdrop-blur-md px-6 py-2.5 rounded-lg text-sm font-bold uppercase tracking-widest mb-4 border-2 border-white/30 shadow-lg"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                Facility Solution Group
-              </motion.span>
-              <div className="text-5xl mb-4">
+                                    className="inline-block bg-white/15 backdrop-blur-md px-4 md:px-6 py-2 md:py-2.5 rounded-lg text-xs md:text-sm font-bold uppercase tracking-wider md:tracking-widest mb-4 md:mb-6 border-2 border-white/30 shadow-lg"
+                                    initial={{ opacity: 0, scale: 0.5 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.5, delay: 0.2 }}
+                                  >
+                                   Performance. Fiabilité. Durabilité.
+                                  </motion.span>
+              <div className="text-3xl md:text-5xl mb-4 md:mb-6">
                 <FaTools className="inline-block text-white drop-shadow-2xl" />
               </div>
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase mb-4 leading-tight max-w-5xl mx-auto">Maintenance Multitechnique</h1>
-              <p className="text-lg md:text-xl opacity-95 text-shadow">Votre fidélité est la preuve de notre expertise</p>
+              <h1 className="text-xl md:text-3xl lg:text-4xl font-black uppercase mb-4 leading-tight max-w-5xl mx-auto" style={{ textShadow: '2px 4px 12px rgba(0, 0, 0, 0.3)' }}>Maintenance Multitechnique</h1>
+              <p className="text-base md:text-lg lg:text-xl opacity-95" style={{ textShadow: '1px 2px 6px rgba(0, 0, 0, 0.3)' }}>Votre fidélité est la preuve de notre expertise</p>
             </motion.div>
           </div>
         </div>

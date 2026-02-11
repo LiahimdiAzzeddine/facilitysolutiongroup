@@ -61,7 +61,7 @@ function EPlaquettePage() {
       transition={{ duration: 0.5 }}
     >
       {/* Hero Section */}
-      <section className="eplaquette-hero">
+      <section className="relative w-full min-h-[50vh] overflow-hidden pt-20 md:pt-[120px]">
         <div 
           className="hero-background"
           style={{ backgroundImage: 'url(/energetique_froid_AdobeStock_2956959112.jpg)' }}
@@ -69,26 +69,26 @@ function EPlaquettePage() {
           <div className="hero-overlay"></div>
           <div className="container mx-auto px-4">
             <motion.div
-              className="hero-content"
+              className="relative z-[3] min-h-[55vh] flex flex-col justify-center items-center text-center text-white py-8 md:py-24"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               <motion.span 
-                className="inline-block bg-white/15 backdrop-blur-md px-6 py-2.5 rounded-lg text-sm font-bold uppercase tracking-widest mb-4 border-2 border-white/30 shadow-lg"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                Facility Solution Group
-              </motion.span>
-              <div className="text-5xl mb-4">
+                                    className="inline-block bg-white/15 backdrop-blur-md px-4 md:px-6 py-2 md:py-2.5 rounded-lg text-xs md:text-sm font-bold uppercase tracking-wider md:tracking-widest mb-4 md:mb-6 border-2 border-white/30 shadow-lg"
+                                    initial={{ opacity: 0, scale: 0.5 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.5, delay: 0.2 }}
+                                  >
+                                   Performance. Fiabilité. Durabilité.
+                                  </motion.span>
+              <div className="text-3xl md:text-5xl mb-4 md:mb-6">
                 <FaBook className="inline-block text-white drop-shadow-2xl" />
               </div>
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase mb-4 leading-tight max-w-5xl mx-auto">
+              <h1 className="text-xl md:text-3xl lg:text-4xl font-black uppercase mb-4 leading-tight max-w-5xl mx-auto" style={{ textShadow: '2px 4px 12px rgba(0, 0, 0, 0.3)' }}>
                 <span className="text-primary">E-Plaquette</span>
               </h1>
-              <p className="text-lg md:text-xl opacity-95 mb-6">Feuilletez notre catalogue comme un vrai livre</p>
+              <p className="text-base md:text-lg lg:text-xl opacity-95 mb-6" style={{ textShadow: '1px 2px 6px rgba(0, 0, 0, 0.3)' }}>Feuilletez notre catalogue comme un vrai livre</p>
             </motion.div>
           </div>
         </div>
@@ -112,22 +112,22 @@ function EPlaquettePage() {
                 Cliquez sur les bords ou utilisez les flèches pour tourner les pages
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-8">
                 <a
                   href="/e-plaquette.pdf"
                   download
-                  className="inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 hover:scale-105 shadow-lg"
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-lg font-semibold text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105 shadow-md"
                 >
-                  <FaDownload />
+                  <FaDownload className="text-sm" />
                   Télécharger le PDF
                 </a>
                 <a
                   href="/e-plaquette.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-secondary hover:bg-secondary-dark text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 hover:scale-105 shadow-lg"
+                  className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary-dark text-white px-5 py-2.5 rounded-lg font-semibold text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105 shadow-md"
                 >
-                  <FaExpand />
+                  <FaExpand className="text-sm" />
                   Ouvrir le PDF
                 </a>
               </div>
@@ -198,28 +198,32 @@ function EPlaquettePage() {
 
               {/* Navigation Controls */}
               {numPages && (
-                <div className="book-controls">
-                  <button
-                    onClick={prevPage}
-                    className="nav-button prev-button"
-                    aria-label="Page précédente"
-                  >
-                    <FaChevronLeft />
-                  </button>
+                <div className="flex justify-center">
+                  <div className="book-controls">
+                    <button
+                      onClick={prevPage}
+                      className="nav-button prev-button"
+                      aria-label="Page précédente"
+                      disabled={currentPage === 0}
+                    >
+                      <FaChevronLeft />
+                    </button>
 
-                  <div className="page-indicator">
-                    <span className="current-page">{currentPage + 1}</span>
-                    <span className="separator">/</span>
-                    <span className="total-pages">{numPages}</span>
+                    <div className="page-indicator">
+                      <span className="current-page">{currentPage + 1}</span>
+                      <span className="separator">/</span>
+                      <span className="total-pages">{numPages}</span>
+                    </div>
+
+                    <button
+                      onClick={nextPage}
+                      className="nav-button next-button"
+                      aria-label="Page suivante"
+                      disabled={currentPage >= numPages - 1}
+                    >
+                      <FaChevronRight />
+                    </button>
                   </div>
-
-                  <button
-                    onClick={nextPage}
-                    className="nav-button next-button"
-                    aria-label="Page suivante"
-                  >
-                    <FaChevronRight />
-                  </button>
                 </div>
               )}
             </div>
@@ -232,13 +236,13 @@ function EPlaquettePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
-              className="text-center mb-12"
+              className="text-center mb-10"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-black text-secondary uppercase mb-6">
+              <h2 className="text-3xl font-black text-secondary uppercase mb-4">
                 Que contient notre E-Plaquette ?
               </h2>
             </motion.div>
@@ -281,11 +285,11 @@ function EPlaquettePage() {
                 >
                   {/* Icon Header */}
                   <div className={`info-icon-header bg-gradient-to-br ${item.color}`}>
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                    <div className="absolute bottom-0 left-0 w-20 h-20 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                    <div className="absolute bottom-0 left-0 w-12 h-12 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
                     <motion.div 
-                      className="relative z-10 text-white text-5xl drop-shadow-2xl"
-                      whileHover={{ rotate: 360, scale: 1.2 }}
+                      className="relative z-10 text-white text-3xl drop-shadow-2xl"
+                      whileHover={{ rotate: 360, scale: 1.1 }}
                       transition={{ duration: 0.6 }}
                     >
                       {item.icon}
@@ -293,11 +297,11 @@ function EPlaquettePage() {
                   </div>
                   
                   {/* Content */}
-                  <div className="p-6 text-center">
-                    <h3 className="text-xl font-black text-secondary mb-3 uppercase tracking-wide">
+                  <div className="p-5 text-center">
+                    <h3 className="text-lg font-bold text-secondary mb-2 uppercase tracking-wide">
                       {item.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                   </div>
 
                   {/* Hover Border Effect */}
