@@ -1,14 +1,14 @@
 import { Helmet } from 'react-helmet-async';
 
 function SEO({ 
-  title = "Facility Solution Group Maroc - Expert en Maintenance Multitechnique",
-  description = "FSG Maroc : Leader en maintenance multitechnique, climatisation, froid industriel, électricité et plomberie. Solutions professionnelles pour entreprises au Maroc.",
-  keywords = "maintenance multitechnique maroc, climatisation maroc, froid industriel, électricité industrielle, plomberie professionnelle, facility management maroc, maintenance préventive, maintenance curative",
+  title = "Facility Solution Group - Maintenance Multitechnique Tanger & Tétouan",
+  description = "FSG : Expert en maintenance multitechnique à Tanger et Tétouan. Climatisation CVC, froid industriel, électricité, courant faible. Intervention 24/7 dans le Nord Maroc.",
+  keywords = "maintenance multitechnique Tanger, climatisation Tanger, froid industriel Tanger, électricité industrielle Tanger, maintenance Tétouan, facility management Tanger, CVC Tanger, maintenance préventive Tanger, dépannage Tanger, nord maroc maintenance",
   image = "/logoweb.png",
   url = "https://facilitysolutiongroup.ma",
   type = "website"
 }) {
-  const siteTitle = "Facility Solution Group Maroc";
+  const siteTitle = "Facility Solution Group";
   const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
 
   return (
@@ -39,9 +39,11 @@ function SEO({
       <meta name="googlebot" content="index, follow" />
       <link rel="canonical" href={url} />
       
-      {/* Geo Tags */}
-      <meta name="geo.region" content="MA" />
-      <meta name="geo.placename" content="Maroc" />
+      {/* Geo Tags - Tanger précis */}
+      <meta name="geo.region" content="MA-TNG" />
+      <meta name="geo.placename" content="Tanger, Maroc" />
+      <meta name="geo.position" content="35.7595;-5.8340" />
+      <meta name="ICBM" content="35.7595, -5.8340" />
       
       {/* Language */}
       <meta httpEquiv="content-language" content="fr-MA" />

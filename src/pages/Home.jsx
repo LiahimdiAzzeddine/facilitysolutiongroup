@@ -12,9 +12,9 @@ function Home() {
   return (
     <>
       <SEO 
-        title="Accueil - Expert en Maintenance Multitechnique au Maroc"
-        description="Facility Solution Group : Votre partenaire de confiance pour la maintenance multitechnique, climatisation, froid industriel, électricité et plomberie au Maroc. Solutions professionnelles et service de qualité."
-        keywords="facility solution group, maintenance maroc, climatisation maroc, froid industriel maroc, électricité industrielle, plomberie professionnelle, facility management, maintenance préventive maroc, maintenance curative"
+        title="Maintenance Multitechnique Tanger & Tétouan - Facility Solution Group"
+        description="Facility Solution Group : Expert en maintenance multitechnique à Tanger et Tétouan. Climatisation CVC, froid industriel, électricité industrielle, courant faible. Intervention 24/7 dans la région Tanger-Tétouan-Al Hoceïma."
+        keywords="maintenance multitechnique Tanger, climatisation Tanger, froid industriel Tanger, électricité Tanger, maintenance Tétouan, facility management Tanger, CVC Tanger, maintenance préventive Tanger, dépannage climatisation Tanger, nord maroc maintenance, facility solution group Tanger"
         url="https://facilitysolutiongroup.ma"
       />
       <Hero />

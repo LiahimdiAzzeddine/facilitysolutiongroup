@@ -58,9 +58,9 @@ function MaintenanceMultitechniquePage() {
       transition={{ duration: 0.5 }}
     >
       <SEO
-        title="Maintenance Multitechnique - Solutions Complètes FSG Maroc"
-        description="Maintenance multitechnique professionnelle au Maroc : CVC, électricité, froid industriel, plomberie. Contrats de maintenance préventive et curative. Intervention 24/7."
-        keywords="maintenance multitechnique maroc, contrat maintenance maroc, maintenance préventive, maintenance curative, facility management maroc, maintenance industrielle"
+        title="Maintenance Multitechnique Tanger & Tétouan - Contrats & Interventions 24/7"
+        description="Maintenance multitechnique professionnelle à Tanger et Tétouan : CVC, électricité, froid industriel, courant faible. Contrats de maintenance préventive et curative. Intervention 24/7 dans le Nord Maroc."
+        keywords="maintenance multitechnique Tanger, contrat maintenance Tanger, maintenance préventive Tanger, maintenance curative Tanger, facility management Tanger, maintenance industrielle Tanger, maintenance Tétouan, GMAO Tanger"
         url="https://facilitysolutiongroup.ma/maintenance-multitechnique"
       />
       {/* Hero Section */}

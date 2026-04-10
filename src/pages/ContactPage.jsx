@@ -92,9 +92,9 @@ function ContactPage() {
       transition={{ duration: 0.5 }}
     >
       <SEO 
-        title="Contactez-nous - Facility Solution Group Maroc"
-        description="Contactez FSG Maroc pour vos besoins en maintenance multitechnique, climatisation et services industriels. Disponibles 24/7. Demander votre devis et intervention rapide."
-        keywords="contact fsg maroc, devis maintenance maroc, contact climatisation maroc, urgence maintenance, service client fsg"
+        title="Contact - Maintenance Multitechnique Tanger & Tétouan"
+        description="Contactez FSG à Tanger pour vos besoins en maintenance multitechnique, climatisation et services industriels. 29 Rue AMR IBN ASS N26, Tanger. Disponibles 24/7. Devis gratuit."
+        keywords="contact maintenance Tanger, devis climatisation Tanger, urgence maintenance Tanger, contact froid industriel Tanger, dépannage Tanger Tétouan, facility solution group contact"
         url="https://facilitysolutiongroup.ma/contact"
       />
       {/* Hero Section */}

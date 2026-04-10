@@ -127,9 +127,9 @@ function ServicesPage() {
       transition={{ duration: 0.5 }}
     >
       <SEO 
-        title="Nos Services - Maintenance Multitechnique & Climatisation"
-        description="Découvrez nos services professionnels : génie climatique (CVC), électricité industrielle, froid industriel, plomberie et maintenance multitechnique. Solutions complètes pour entreprises au Maroc."
-        keywords="services maintenance maroc, génie climatique maroc, CVC maroc, électricité industrielle, froid industriel, plomberie professionnelle, maintenance multitechnique, climatisation professionnelle"
+        title="Services Maintenance Multitechnique Tanger & Tétouan - CVC, Froid, Électricité"
+        description="Services professionnels à Tanger et Tétouan : génie climatique CVC, froid industriel et commercial, électricité industrielle, courant faible. Solutions complètes pour entreprises dans le Nord Maroc."
+        keywords="services maintenance Tanger, génie climatique Tanger, CVC Tanger, froid industriel Tanger, électricité industrielle Tanger, courant faible Tanger, maintenance Tétouan, climatisation professionnelle Tanger, chambre froide Tanger"
         url="https://facilitysolutiongroup.ma/services"
       />
       {/* Hero Section */}
